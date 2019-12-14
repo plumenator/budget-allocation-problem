@@ -58,6 +58,29 @@ someDistricts = do
                                                                              M.districtName = DistrictName "Tulsa",
                                                                              M.availableFunds = Amount 10000,
                                                                              M.categoryDefaultFunding = empty}]
+    it "returns Left String when given an Input with billSpecificFunding" $
+      M.districtsFromInput Input { bills = [],
+                                   districts = [District {
+                                                   districtName = DistrictName "Tulsa",
+                                                   availableFunds = Amount 10000,
+                                                   categoryDefaultFunding = [],
+                                                   billSpecificFunding =  [BillSpecific {
+                                                                              bill = BillName "A Bill",
+                                                                              specificAmount = Amount 1000 }],
+                                                   caps = []
+                                                   }] } `shouldBe` Left "There shouldn't be any billSpecificFunding or caps"
+    it "returns Left String when given an Input with caps" $
+      M.districtsFromInput Input { bills = [],
+                                   districts = [District {
+                                                   districtName = DistrictName "Tulsa",
+                                                   availableFunds = Amount 10000,
+                                                   categoryDefaultFunding = [],
+                                                   billSpecificFunding =  [],
+                                                   caps = [Cap {
+                                                              capCategory = Defense,
+                                                              capAmount = Amount 100
+                                                              }]
+                                                   }] } `shouldBe` Left "There shouldn't be any billSpecificFunding or caps"
     it "returns Left String when given an Input with no Districts" $
       M.districtsFromInput Input { bills = [],
                                    districts = [] } `shouldBe` Left "Expected at least one District"

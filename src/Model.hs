@@ -26,12 +26,15 @@ data District = District {
   }
   deriving (Show, Eq)
 
-toDistrict :: I.District -> District
+toDistrict :: I.District -> Either String District
 toDistrict I.District { I.districtName = dname,
                         I.availableFunds = afunds,
-                        I.categoryDefaultFunding = defaults } = District { districtName = dname,
-                                                                           availableFunds = afunds,
-                                                                           categoryDefaultFunding = toCategoryDefaultMap defaults }
+                        I.categoryDefaultFunding = defaults,
+                        I.billSpecificFunding = [],
+                        I.caps = [] } = Right District { districtName = dname,
+                                                         availableFunds = afunds,
+                                                         categoryDefaultFunding = toCategoryDefaultMap defaults }
+toDistrict _ = Left "There shouldn't be any billSpecificFunding or caps"
 
 toCategoryDefaultMap :: [I.CategoryDefault] -> Map Category Amount
 toCategoryDefaultMap = fromList . fmap toTuple where
@@ -40,4 +43,4 @@ toCategoryDefaultMap = fromList . fmap toTuple where
 districtsFromInput :: I.Input -> Either String [District]
 districtsFromInput I.Input { I.districts = districts }
   | Prelude.null districts = Left "Expected at least one District"
-  | otherwise = Right (fmap toDistrict districts)
+  | otherwise = sequence $ fmap toDistrict districts
