@@ -48,7 +48,7 @@ encodeContribution = do
   describe "Encode Contribution to JSON" $ do
     it "returns JSON when given an Contribution" $
       encode Contribution {
-      name = BillName "A Bill",
+      billName = BillName "A Bill",
       funds = [Fund {
                   district = DistrictName "Tulsa",
                   amount = Amount 1000
@@ -58,7 +58,7 @@ encodeContribution = do
                   amount = Amount 3333
                   }]
       } `shouldBe` "{\
-             \\"name\":\"A Bill\",\
+             \\"billName\":\"A Bill\",\
              \\"funds\":[\
                \{\
                  \\"amount\":1000,\
@@ -77,7 +77,7 @@ encodeOutput = do
     it "returns JSON when given an Output" $
       encode Output {
       contributions = [Contribution {
-                        name = BillName "A Bill",
+                        billName = BillName "A Bill",
                         funds = [Fund {
                                     district = DistrictName "Tulsa",
                                     amount = Amount 1000
@@ -88,7 +88,7 @@ encodeOutput = do
                                     }]
                         },
                      Contribution {
-                        name = BillName "Another Bill",
+                        billName = BillName "Another Bill",
                         funds = [Fund {
                                     district = DistrictName "Tulsa",
                                     amount = Amount 4444
@@ -98,4 +98,4 @@ encodeOutput = do
                                     amount = Amount 5555
                                     }]
                         }]
-      } `shouldBe` "{\"contributions\":[{\"name\":\"A Bill\",\"funds\":[{\"amount\":1000,\"district\":\"Tulsa\"},{\"amount\":3333,\"district\":\"Idaho\"}]},{\"name\":\"Another Bill\",\"funds\":[{\"amount\":4444,\"district\":\"Tulsa\"},{\"amount\":5555,\"district\":\"Idaho\"}]}]}"
+      } `shouldBe` "{\"contributions\":[{\"billName\":\"A Bill\",\"funds\":[{\"amount\":1000,\"district\":\"Tulsa\"},{\"amount\":3333,\"district\":\"Idaho\"}]},{\"billName\":\"Another Bill\",\"funds\":[{\"amount\":4444,\"district\":\"Tulsa\"},{\"amount\":5555,\"district\":\"Idaho\"}]}]}"

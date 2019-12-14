@@ -12,7 +12,7 @@ data Output = Output {
   deriving (Show, Generic, ToJSON, FromJSON, Eq)
 
 data Contribution = Contribution {
-  name :: BillName,
+  billName :: BillName,
   funds :: [Fund]
   }
   deriving (Show, Generic, ToJSON, FromJSON, Eq)
