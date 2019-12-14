@@ -39,6 +39,7 @@ newtype BillName = BillName Text
 data Category = Defense | Welfare | Science
   deriving (Show, Generic, ToJSON, ToJSONKey, FromJSON, FromJSONKey, Eq, Ord)
 
+-- TODO: Customize FromJSON to reject negative numbers
 newtype Amount = Amount Integer
   deriving (Show, Generic, ToJSON, FromJSON, Eq)
 
