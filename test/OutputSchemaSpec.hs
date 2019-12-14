@@ -77,25 +77,25 @@ encodeOutput = do
     it "returns JSON when given an Output" $
       encode Output {
       contributions = [Contribution {
-                  name = BillName "A Bill",
-                  funds = [Fund {
-                              district = DistrictName "Tulsa",
-                              amount = Amount 1000
-                              },
-                           Fund {
-                              district = DistrictName "Idaho",
-                              amount = Amount 3333
-                              }]
-                  },
-                Contribution {
-                  name = BillName "Another Bill",
-                  funds = [Fund {
-                              district = DistrictName "Tulsa",
-                              amount = Amount 4444
-                              },
-                           Fund {
-                              district = DistrictName "Idaho",
-                              amount = Amount 5555
-                              }]
-                  }]
+                        name = BillName "A Bill",
+                        funds = [Fund {
+                                    district = DistrictName "Tulsa",
+                                    amount = Amount 1000
+                                    },
+                                 Fund {
+                                    district = DistrictName "Idaho",
+                                    amount = Amount 3333
+                                    }]
+                        },
+                     Contribution {
+                        name = BillName "Another Bill",
+                        funds = [Fund {
+                                    district = DistrictName "Tulsa",
+                                    amount = Amount 4444
+                                    },
+                                 Fund {
+                                    district = DistrictName "Idaho",
+                                    amount = Amount 5555
+                                    }]
+                        }]
       } `shouldBe` "{\"contributions\":[{\"name\":\"A Bill\",\"funds\":[{\"amount\":1000,\"district\":\"Tulsa\"},{\"amount\":3333,\"district\":\"Idaho\"}]},{\"name\":\"Another Bill\",\"funds\":[{\"amount\":4444,\"district\":\"Tulsa\"},{\"amount\":5555,\"district\":\"Idaho\"}]}]}"
