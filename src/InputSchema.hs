@@ -3,7 +3,6 @@
 module InputSchema where
 
 import Data.Aeson
-import Data.Map.Strict
 import Data.Text
 import GHC.Generics
 
