@@ -11,7 +11,7 @@ data Input = Input {
   districts :: [District]
   }
   deriving (Show, Generic, ToJSON, FromJSON, Eq)
-  
+
 data Bill = Bill {
   billName :: BillName,
   category :: Category,
