@@ -13,7 +13,7 @@ spec = do
   encodeDistrictName
   encodeAmount
   encodeFund
-  encodeBill
+  encodeContribution
   encodeOutput
 
 encodeBillName :: Spec
@@ -43,11 +43,11 @@ encodeFund = do
              \\"district\":\"Tulsa\"\
              \}"
 
-encodeBill :: Spec
-encodeBill = do
-  describe "Encode Bill to JSON" $ do
-    it "returns JSON when given a Bill" $
-      encode Bill {
+encodeContribution :: Spec
+encodeContribution = do
+  describe "Encode Contribution to JSON" $ do
+    it "returns JSON when given an Contribution" $
+      encode Contribution {
       name = BillName "A Bill",
       funds = [Fund {
                   district = DistrictName "Tulsa",
@@ -76,7 +76,7 @@ encodeOutput = do
   describe "Encode Output to JSON" $ do
     it "returns JSON when given an Output" $
       encode Output {
-      bills = [Bill {
+      contributions = [Contribution {
                   name = BillName "A Bill",
                   funds = [Fund {
                               district = DistrictName "Tulsa",
@@ -87,7 +87,7 @@ encodeOutput = do
                               amount = Amount 3333
                               }]
                   },
-                Bill {
+                Contribution {
                   name = BillName "Another Bill",
                   funds = [Fund {
                               district = DistrictName "Tulsa",
@@ -98,4 +98,4 @@ encodeOutput = do
                               amount = Amount 5555
                               }]
                   }]
-      } `shouldBe` "{\"bills\":[{\"name\":\"A Bill\",\"funds\":[{\"amount\":1000,\"district\":\"Tulsa\"},{\"amount\":3333,\"district\":\"Idaho\"}]},{\"name\":\"Another Bill\",\"funds\":[{\"amount\":4444,\"district\":\"Tulsa\"},{\"amount\":5555,\"district\":\"Idaho\"}]}]}"
+      } `shouldBe` "{\"contributions\":[{\"name\":\"A Bill\",\"funds\":[{\"amount\":1000,\"district\":\"Tulsa\"},{\"amount\":3333,\"district\":\"Idaho\"}]},{\"name\":\"Another Bill\",\"funds\":[{\"amount\":4444,\"district\":\"Tulsa\"},{\"amount\":5555,\"district\":\"Idaho\"}]}]}"

@@ -7,11 +7,11 @@ import Data.Text
 import GHC.Generics
 
 data Output = Output {
-  bills :: [Bill]
+  contributions :: [Contribution]
   }
   deriving (Show, Generic, ToJSON, FromJSON, Eq)
 
-data Bill = Bill {
+data Contribution = Contribution {
   name :: BillName,
   funds :: [Fund]
   }
