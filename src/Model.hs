@@ -3,7 +3,8 @@ module Model (
   billFromInput,
   BillName (..),
   Category (..),
-  Amount,
+  DistrictName (..),
+  Amount (..),
   District (..),
   districtsFromInput
   ) where

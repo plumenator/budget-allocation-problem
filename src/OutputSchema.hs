@@ -1,10 +1,19 @@
 {-# LANGUAGE DeriveGeneric, DeriveAnyClass #-}
 
-module OutputSchema where
+module OutputSchema (
+  Contribution (..),
+  Amount (..),
+  BillName (..),
+  DistrictName (..),
+  Fund (..),
+  Output (..)
+  ) where
 
 import Data.Aeson
 import Data.Text
 import GHC.Generics
+
+import Model (Amount (..), BillName (..), DistrictName (..))
 
 data Output = Output {
   contributions :: [Contribution]
@@ -17,17 +26,8 @@ data Contribution = Contribution {
   }
   deriving (Show, Generic, ToJSON, FromJSON, Eq)
 
-newtype BillName = BillName Text
-  deriving (Show, Generic, ToJSON, ToJSONKey, FromJSON, FromJSONKey, Eq, Ord)
-
 data Fund = Fund {
   district :: DistrictName,
   amount :: Amount
   }
-  deriving (Show, Generic, ToJSON, FromJSON, Eq)
-
-newtype DistrictName = DistrictName Text
-  deriving (Show, Generic, ToJSON, FromJSON, Eq)
-
-newtype Amount = Amount Integer
   deriving (Show, Generic, ToJSON, FromJSON, Eq)
