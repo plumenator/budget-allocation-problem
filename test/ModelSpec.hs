@@ -10,38 +10,26 @@ import qualified Model as M
 
 spec :: Spec
 spec = do
-  exactlyOneBill
+  atLeastOneBill
   someDistricts
 
-exactlyOneBill :: Spec
-exactlyOneBill = do
-  describe "Get exactly one Bill from Input" $ do
-    it "returns Right Bill when given an Input with one Bill" $
-      M.billFromInput Input { bills = [Bill {
+atLeastOneBill :: Spec
+atLeastOneBill = do
+  describe "Get at least one Bill from Input" $ do
+    it "returns Right [Bill] when given an Input with at least one Bill" $
+      M.billsFromInput Input { bills = [Bill {
                                         billName = BillName "An Act to Construct the Great Wall of Malodivo",
                                         category = Defense,
                                         amount = Amount 200000
                                         }],
-                              districts = [] } `shouldBe` Right M.Bill {
+                              districts = [] } `shouldBe` Right [M.Bill {
                                         M.billName = M.BillName "An Act to Construct the Great Wall of Malodivo",
                                         M.category = M.Defense,
                                         M.amount = Amount 200000
-                                        }
-    it "returns Left String when given an Input with multiple Bills" $
-      M.billFromInput Input { bills = [Bill {
-                                        billName = BillName "An Act to Construct the Great Wall of Malodivo",
-                                        category = Defense,
-                                        amount = Amount 200000
-                                        },
-                                      Bill {
-                                        billName = BillName "An Act to Construct Shelters for the Homeless",
-                                        category = Welfare,
-                                        amount = Amount 40000
-                                        }],
-                              districts = [] } `shouldBe` Left "Expected exactly one Bill"
+                                        }]
     it "returns Left String when given an Input with no Bills" $
-      M.billFromInput Input { bills = [],
-                              districts = [] } `shouldBe` Left "Expected exactly one Bill"
+      M.billsFromInput Input { bills = [],
+                              districts = [] } `shouldBe` Left "Expected at least one Bill"
 
 someDistricts :: Spec
 someDistricts = do

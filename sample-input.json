@@ -4,6 +4,21 @@
       "name": "An Act to Construct the Great Wall of Malodivo",
       "category": "Defense",
       "amount": 200000
+    },
+    {
+      "name": "An Act to Construct Shelters for the Homeless",
+      "category": "Welfare",
+      "amount": 40000
+    },
+    {
+      "name": "An Act to Fund the Development of Longer-Lasting Paper",
+      "category": "Science",
+      "amount": 14000
+    },
+    {
+      "name": "An Act to Increase Retirement Benefits for Veterans",
+      "category": "Welfare",
+      "amount": 90000
     }
   ],
   "districts": [

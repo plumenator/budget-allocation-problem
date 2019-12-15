@@ -66,7 +66,7 @@ instance FromJSON District where
     }
 
 newtype DistrictName = DistrictName Text
-  deriving (Show, Generic, ToJSON, FromJSON, Eq)
+  deriving (Show, Generic, ToJSON, FromJSON, Eq, Ord)
 
 data CategoryDefault = CategoryDefault { defaultCategory :: Category, defaultAmount :: Amount }
   deriving (Show, Generic, Eq)

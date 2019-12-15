@@ -12,6 +12,6 @@ import OutputSchema
 processInputBytes :: ByteString -> Either String ByteString
 processInputBytes inputBytes = do
   input <- eitherDecode inputBytes
-  bill <- billFromInput input
+  bills <- billsFromInput input
   districts <- districtsFromInput input
-  return $ encode Output { contributions = [contribute bill districts] }
+  return $ encode Output { contributions = contribute bills districts }

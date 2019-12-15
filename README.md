@@ -21,6 +21,57 @@ $ stack exec $(basename `pwd`)-exe < sample-input.json | jq
           "district": "Lakos"
         }
       ]
+    },
+    {
+      "billName": "An Act to Construct Shelters for the Homeless",
+      "funds": [
+        {
+          "amount": 3000,
+          "district": "Palolene"
+        },
+        {
+          "amount": 5000,
+          "district": "Southern Palolene"
+        },
+        {
+          "amount": 1000,
+          "district": "Lakos"
+        }
+      ]
+    },
+    {
+      "billName": "An Act to Fund the Development of Longer-Lasting Paper",
+      "funds": [
+        {
+          "amount": 5000,
+          "district": "Palolene"
+        },
+        {
+          "amount": 2000,
+          "district": "Southern Palolene"
+        },
+        {
+          "amount": 500,
+          "district": "Lakos"
+        }
+      ]
+    },
+    {
+      "billName": "An Act to Increase Retirement Benefits for Veterans",
+      "funds": [
+        {
+          "amount": 3000,
+          "district": "Palolene"
+        },
+        {
+          "amount": 5000,
+          "district": "Southern Palolene"
+        },
+        {
+          "amount": 1000,
+          "district": "Lakos"
+        }
+      ]
     }
   ]
 }
@@ -32,7 +83,6 @@ $ stack test --fast
 ```
 
 ## Assumptions
-1. Exactly one element in `bills`
 1. Empty `billSpecificFunding`
 1. Empty `caps`
 1. Only 3 categories: `Defense`, `Science` and `Welfare`

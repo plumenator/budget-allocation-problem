@@ -1,8 +1,6 @@
 module Contribute (
   O.Contribution (..),
   contribute,
-  billAllocationProportion,
-  billAvailableFunds,
   O.Fund (..)
   ) where
 
@@ -12,16 +10,21 @@ import qualified Data.Map.Strict as Map
 import Model
 import qualified OutputSchema as O
 
-contribute :: Bill -> [District] -> O.Contribution
-contribute Bill { Model.billName = billName, category = category, Model.amount = requiredFunds } allDistricts = O.Contribution { O.billName = billName, O.funds = fmap contribution allDistricts } where
-  contribution district = O.Fund { O.district = districtName district, O.amount = min (billAvailableFunds category district) (share (contributionProportion district) requiredFunds) }
-  contributionProportion district = ratio (billAvailableFunds category district) totalAvailableFunds
-  totalAvailableFunds = Prelude.foldr add (Amount 0) (fmap (billAvailableFunds category) allDistricts)
+contribute :: [Bill] -> [District] -> [O.Contribution]
+contribute allBills allDistricts = fmap contribution allBills where
+  contribution bill = O.Contribution { O.billName = billName bill, O.funds = fmap (fund bill) allDistricts }
+  fund bill district = O.Fund { O.district = districtName district, O.amount = min (provided district) (share (contributionProportion district) (amount bill)) } where
+    contributionProportion district = ratio (provided district) totalProvidedFunds
+    totalProvidedFunds = Prelude.foldr add (Amount 0) (fmap provided allDistricts)
+    provided district = min billAllocated (billAvailableFunds bill (ratio billAllocated totalAllocated) district) where
+      billAllocated = categoryAllocation (category bill) district
+      totalAllocated = Prelude.foldr add (Amount 0) [categoryAllocation (category b) district | b <- allBills]
 
-billAllocationProportion :: Category -> District -> Rational
-billAllocationProportion category district@District { categoryDefaultFunding = defaults }
-  = ratio (categoryAllocation category district) totalAllocation where
-  totalAllocation = Map.foldl' add (Amount 0) defaults
+billAvailableFunds :: Bill -> Rational -> District -> Amount
+billAvailableFunds bill ratio district = share ratio (availableFunds district)
+
+share :: Rational -> Amount -> Amount
+share ratio (Amount total) = Amount $ (numerator ratio) * total `div` (denominator ratio)
 
 categoryAllocation :: Category -> District -> Amount
 categoryAllocation  category District { categoryDefaultFunding = defaults } = Map.findWithDefault (Amount 0) category defaults
@@ -33,11 +36,3 @@ ratio :: Amount -> Amount -> Rational
 ratio _ (Amount 0) = 0
 ratio (Amount n) (Amount d) = fromIntegral n / fromIntegral d
 
-billAvailableFunds :: Category -> District -> Amount
-billAvailableFunds category district@District { availableFunds = totalAvailable } =
-  min allocated available where
-  allocated = categoryAllocation category district
-  available = share (billAllocationProportion category district) totalAvailable
-
-share :: Rational -> Amount -> Amount
-share ratio (Amount total) = Amount $ (numerator ratio) * total `div` (denominator ratio)

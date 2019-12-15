@@ -1,6 +1,6 @@
 module Model (
   Bill (..),
-  billFromInput,
+  billsFromInput,
   BillName (..),
   Category (..),
   DistrictName (..),
@@ -15,10 +15,10 @@ import Data.Text
 import InputSchema (Bill, BillName, Category, Amount, DistrictName)
 import qualified InputSchema as I
 
-billFromInput :: I.Input -> Either String Bill
-billFromInput  = takeOneOrFail . I.bills where
-  takeOneOrFail [x] = Right x
-  takeOneOrFail _ = Left "Expected exactly one Bill"
+billsFromInput :: I.Input -> Either String [Bill]
+billsFromInput I.Input { I.bills = bills }
+  | Prelude.null bills = Left "Expected at least one Bill"
+  | otherwise = Right bills
 
 data District = District {
   districtName :: DistrictName,
