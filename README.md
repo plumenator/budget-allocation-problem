@@ -36,6 +36,7 @@ $ stack test --fast
 1. Empty `billSpecificFunding`
 1. Empty `caps`
 1. Only 3 categories: `Defense`, `Science` and `Welfare`
+1. The absence of a default means that there's no allocation for that category
 1. ASCII encoded input
 
 ## Limitations
