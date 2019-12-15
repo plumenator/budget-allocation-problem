@@ -41,7 +41,7 @@ data Category = Defense | Welfare | Science
 
 -- TODO: Customize FromJSON to reject negative numbers
 newtype Amount = Amount Integer
-  deriving (Show, Generic, ToJSON, FromJSON, Eq)
+  deriving (Show, Generic, ToJSON, FromJSON, Eq, Ord)
 
 data District = District {
   districtName :: DistrictName,
