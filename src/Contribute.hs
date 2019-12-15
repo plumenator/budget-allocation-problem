@@ -16,9 +16,17 @@ contribute allBills allDistricts = fmap contribution allBills where
   fund bill district = O.Fund { O.district = districtName district, O.amount = min (provided district) (share (contributionProportion district) (amount bill)) } where
     contributionProportion district = ratio (provided district) totalProvidedFunds
     totalProvidedFunds = Prelude.foldr add (Amount 0) (fmap provided allDistricts)
-    provided district = min billAllocated (billAvailableFunds bill (ratio billAllocated totalAllocated) district) where
-      billAllocated = billAllocation bill district
-      totalAllocated = Prelude.foldr add (Amount 0) [billAllocation b district | b <- allBills]
+    provided district = case billCap bill (ratio billAllocated totalCategoryAllocated) district of
+                          Just capped -> min uncapped capped
+                          Nothing -> uncapped
+      where
+        uncapped = min billAllocated (billAvailableFunds bill (ratio billAllocated totalAllocated) district)
+        billAllocated = billAllocation bill district
+        totalAllocated = Prelude.foldr add (Amount 0) [billAllocation b district | b <- allBills]
+        totalCategoryAllocated = Prelude.foldr add (Amount 0) [billAllocation b district | b <- allBills, (category b) == (category bill)]
+
+billCap :: Bill -> Rational -> District -> Maybe Amount
+billCap bill ratio district =  Map.lookup (category bill) (caps district) >>= return . share ratio
 
 billAvailableFunds :: Bill -> Rational -> District -> Amount
 billAvailableFunds bill ratio district = share ratio (availableFunds district)

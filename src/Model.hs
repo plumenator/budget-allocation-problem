@@ -24,7 +24,8 @@ data District = District {
   districtName :: DistrictName,
   availableFunds :: Amount,
   categoryDefaultFunding :: Map Category Amount,
-  billSpecificFunding :: Map BillName Amount
+  billSpecificFunding :: Map BillName Amount,
+  caps :: Map Category Amount
   }
   deriving (Show, Eq)
 
@@ -33,11 +34,11 @@ toDistrict I.District { I.districtName = dname,
                         I.availableFunds = afunds,
                         I.categoryDefaultFunding = defaults,
                         I.billSpecificFunding = specifics,
-                        I.caps = [] } = Right District { districtName = dname,
-                                                         availableFunds = afunds,
-                                                         categoryDefaultFunding = toCategoryDefaultMap defaults,
-                                                         billSpecificFunding = toBillSpecificFundingMap specifics }
-toDistrict _ = Left "There shouldn't be any caps"
+                        I.caps = caps } = Right District { districtName = dname,
+                                                           availableFunds = afunds,
+                                                           categoryDefaultFunding = toCategoryDefaultMap defaults,
+                                                           billSpecificFunding = toBillSpecificFundingMap specifics,
+                                                           caps = toCapsMap caps}
 
 toCategoryDefaultMap :: [I.CategoryDefault] -> Map Category Amount
 toCategoryDefaultMap = fromList . fmap toTuple where
@@ -46,6 +47,10 @@ toCategoryDefaultMap = fromList . fmap toTuple where
 toBillSpecificFundingMap :: [I.BillSpecific] -> Map BillName Amount
 toBillSpecificFundingMap = fromList . fmap toTuple where
   toTuple I.BillSpecific { I.bill = b, I.specificAmount = a } = (b, a)
+
+toCapsMap :: [I.Cap] -> Map Category Amount
+toCapsMap = fromList . fmap toTuple where
+  toTuple I.Cap { I.capCategory = b, I.capAmount = a } = (b, a)
 
 districtsFromInput :: I.Input -> Either String [District]
 districtsFromInput I.Input { I.districts = districts }

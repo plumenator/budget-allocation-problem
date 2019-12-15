@@ -46,19 +46,8 @@ someDistricts = do
                                                                              M.districtName = DistrictName "Tulsa",
                                                                              M.availableFunds = Amount 10000,
                                                                              M.categoryDefaultFunding = empty,
-                                                                             M.billSpecificFunding =  empty}]
-    it "returns Left String when given an Input with caps" $
-      M.districtsFromInput Input { bills = [],
-                                   districts = [District {
-                                                   districtName = DistrictName "Tulsa",
-                                                   availableFunds = Amount 10000,
-                                                   categoryDefaultFunding = [],
-                                                   billSpecificFunding =  [],
-                                                   caps = [Cap {
-                                                              capCategory = Defense,
-                                                              capAmount = Amount 100
-                                                              }]
-                                                   }] } `shouldBe` Left "There shouldn't be any caps"
+                                                                             M.billSpecificFunding =  empty,
+                                                                             M.caps = empty}]
     it "returns Left String when given an Input with no Districts" $
       M.districtsFromInput Input { bills = [],
                                    districts = [] } `shouldBe` Left "Expected at least one District"

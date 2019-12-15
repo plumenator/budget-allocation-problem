@@ -50,6 +50,18 @@
         }
       ],
       "caps": [
+        {
+          "category": "Defense",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare",
+          "amount": 3199
+        },
+        {
+          "category": "Science",
+          "amount": 15000
+        }
       ]
     },
     {
@@ -71,6 +83,18 @@
       ],
       "billSpecificFunding": [],
       "caps": [
+        {
+          "category": "Defense",
+          "amount": 10000
+        },
+        {
+          "category": "Welfare",
+          "amount": 10000
+        },
+        {
+          "category": "Science",
+          "amount": 10000
+        }
       ]
     },
     {
@@ -101,6 +125,18 @@
         }
       ],
       "caps": [
+        {
+          "category": "Defense",
+          "amount": 30000
+        },
+        {
+          "category": "Welfare",
+          "amount": 3000
+        },
+        {
+          "category": "Science",
+          "amount": 1000
+        }
       ]
     }
   ]
