@@ -30,3 +30,10 @@ $ stack exec $(basename `pwd`)-exe < sample-input.json | jq
 ```shell
 $ stack test --fast
 ```
+
+## Assumptions
+1. Exactly one element in `bills`
+1. Empty `billSpecificFunding`
+1. Empty `caps`
+1. Only 3 categories: `Defense`, `Science` and `Welfare`
+1. ASCII encoded input
