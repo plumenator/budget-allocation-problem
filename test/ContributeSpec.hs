@@ -30,7 +30,8 @@ oneBillOneDistrict = do
       }] [District {
             districtName = DistrictName "Tulsa",
             availableFunds = Amount 10000,
-            categoryDefaultFunding = empty
+            categoryDefaultFunding = empty,
+            billSpecificFunding = empty
             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
                                          funds = [Fund {
                                                      district = DistrictName "Tulsa",
@@ -45,7 +46,8 @@ oneBillOneDistrict = do
       }] [District {
             districtName = DistrictName "Tulsa",
             availableFunds = Amount 10000,
-            categoryDefaultFunding = fromList [(Defense, Amount 10)]
+            categoryDefaultFunding = fromList [(Defense, Amount 10)],
+            billSpecificFunding = empty
             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
                                          funds = [Fund {
                                                      district = DistrictName "Tulsa",
@@ -60,7 +62,8 @@ oneBillOneDistrict = do
       }] [District {
             districtName = DistrictName "Tulsa",
             availableFunds = Amount 10000,
-            categoryDefaultFunding = fromList [(Welfare, Amount 10000), (Science, Amount 10000), (Defense, Amount 10000)]
+            categoryDefaultFunding = fromList [(Welfare, Amount 10000), (Science, Amount 10000), (Defense, Amount 10000)],
+            billSpecificFunding = empty
             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
                                          funds = [Fund {
                                                      district = DistrictName "Tulsa",
@@ -89,7 +92,8 @@ multipleBillsOneDistrict = do
                      }] [District {
                             districtName = DistrictName "Tulsa",
                             availableFunds = Amount 10000,
-                            categoryDefaultFunding = empty
+                            categoryDefaultFunding = empty,
+                            billSpecificFunding = empty
                             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
                                                           funds = [Fund {
                                                                       district = DistrictName "Tulsa",
@@ -126,7 +130,8 @@ multipleBillsOneDistrict = do
                      }] [District {
                             districtName = DistrictName "Tulsa",
                             availableFunds = Amount 10000,
-                            categoryDefaultFunding = fromList [(Welfare, Amount 10000), (Science, Amount 5000), (Defense, Amount 5000)]
+                            categoryDefaultFunding = fromList [(Welfare, Amount 10000), (Science, Amount 5000), (Defense, Amount 5000)],
+                            billSpecificFunding = empty
                             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
                                                           funds = [Fund {
                                                                       district = DistrictName "Tulsa",
@@ -157,17 +162,20 @@ oneBillMultipleDistricts = do
       }] [District {
             districtName = DistrictName "Tulsa",
             availableFunds = Amount 10000,
-            categoryDefaultFunding = empty
+            categoryDefaultFunding = empty,
+            billSpecificFunding = empty
             },
           District {
             districtName = DistrictName "Idaho",
             availableFunds = Amount 5000,
-            categoryDefaultFunding = empty
+            categoryDefaultFunding = empty,
+            billSpecificFunding = empty
             },
           District {
             districtName = DistrictName "Attica",
             availableFunds = Amount 5000,
-            categoryDefaultFunding = empty
+            categoryDefaultFunding = empty,
+            billSpecificFunding = empty
             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
                                          funds = [Fund {
                                                      district = DistrictName "Tulsa",
@@ -190,17 +198,20 @@ oneBillMultipleDistricts = do
       }] [District {
             districtName = DistrictName "Tulsa",
             availableFunds = Amount 10000,
-            categoryDefaultFunding = fromList [(Defense, Amount 10)]
+            categoryDefaultFunding = fromList [(Defense, Amount 10)],
+            billSpecificFunding = empty
             },
           District {
             districtName = DistrictName "Idaho",
             availableFunds = Amount 5000,
-            categoryDefaultFunding = empty
+            categoryDefaultFunding = empty,
+            billSpecificFunding = empty
             },
           District {
             districtName = DistrictName "Attica",
             availableFunds = Amount 5000,
-            categoryDefaultFunding = empty
+            categoryDefaultFunding = empty,
+            billSpecificFunding = empty
             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
                                          funds = [Fund {
                                                      district = DistrictName "Tulsa",
@@ -223,17 +234,20 @@ oneBillMultipleDistricts = do
       }] [District {
             districtName = DistrictName "Tulsa",
             availableFunds = Amount 10000,
-            categoryDefaultFunding = fromList [(Defense, Amount 10)]
+            categoryDefaultFunding = fromList [(Defense, Amount 10)],
+            billSpecificFunding = empty
             },
           District {
             districtName = DistrictName "Idaho",
             availableFunds = Amount 5000,
-            categoryDefaultFunding = fromList [(Defense, Amount 5)]
+            categoryDefaultFunding = fromList [(Defense, Amount 5)],
+            billSpecificFunding = empty
             },
           District {
             districtName = DistrictName "Attica",
             availableFunds = Amount 5000,
-            categoryDefaultFunding = fromList [(Defense, Amount 5)]
+            categoryDefaultFunding = fromList [(Defense, Amount 5)],
+            billSpecificFunding = empty
             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
                                          funds = [Fund {
                                                      district = DistrictName "Tulsa",
@@ -270,17 +284,20 @@ multipleBillsMultipleDistricts = do
                      }] [District {
                             districtName = DistrictName "Tulsa",
                             availableFunds = Amount 10000,
-                            categoryDefaultFunding = empty
+                            categoryDefaultFunding = empty,
+                            billSpecificFunding = empty
                             },
                          District {
                             districtName = DistrictName "Idaho",
                             availableFunds = Amount 5000,
-                            categoryDefaultFunding = empty
+                            categoryDefaultFunding = empty,
+                            billSpecificFunding = empty
                             },
                          District {
                             districtName = DistrictName "Attica",
                             availableFunds = Amount 5000,
-                            categoryDefaultFunding = empty
+                            categoryDefaultFunding = empty,
+                            billSpecificFunding = empty
                             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
                                                           funds = [Fund {
                                                                       district = DistrictName "Tulsa",
@@ -341,17 +358,20 @@ multipleBillsMultipleDistricts = do
                      }] [District {
                             districtName = DistrictName "Tulsa",
                             availableFunds = Amount 10000,
-                            categoryDefaultFunding = fromList [(Defense, Amount 200000)]
+                            categoryDefaultFunding = fromList [(Defense, Amount 200000)],
+                            billSpecificFunding = empty
                             },
                          District {
                             districtName = DistrictName "Idaho",
                             availableFunds = Amount 5000,
-                            categoryDefaultFunding = fromList [(Science, Amount 200000)]
+                            categoryDefaultFunding = fromList [(Science, Amount 200000)],
+                            billSpecificFunding = empty
                             },
                          District {
                             districtName = DistrictName "Attica",
                             availableFunds = Amount 5000,
-                            categoryDefaultFunding = fromList [(Welfare, Amount 200000)]
+                            categoryDefaultFunding = fromList [(Welfare, Amount 200000)],
+                            billSpecificFunding = empty
                             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
                                                           funds = [Fund {
                                                                       district = DistrictName "Tulsa",
@@ -412,17 +432,20 @@ multipleBillsMultipleDistricts = do
                      }] [District {
                             districtName = DistrictName "Tulsa",
                             availableFunds = Amount 10000,
-                            categoryDefaultFunding = fromList [(Defense, Amount 5000), (Science, Amount 2500), (Welfare, Amount 2500)]
+                            categoryDefaultFunding = fromList [(Defense, Amount 5000), (Science, Amount 2500), (Welfare, Amount 2500)],
+                            billSpecificFunding = empty
                             },
                          District {
                             districtName = DistrictName "Idaho",
                             availableFunds = Amount 5000,
-                            categoryDefaultFunding = fromList [(Defense, Amount 1250), (Science, Amount 2500), (Welfare, Amount 1250)]
+                            categoryDefaultFunding = fromList [(Defense, Amount 1250), (Science, Amount 2500), (Welfare, Amount 1250)],
+                            billSpecificFunding = empty
                             },
                          District {
                             districtName = DistrictName "Attica",
                             availableFunds = Amount 5000,
-                            categoryDefaultFunding = fromList [(Defense, Amount 1250), (Science, Amount 1250), (Welfare, Amount 2500)]
+                            categoryDefaultFunding = fromList [(Defense, Amount 1250), (Science, Amount 1250), (Welfare, Amount 2500)],
+                            billSpecificFunding = empty
                             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
                                                           funds = [Fund {
                                                                       district = DistrictName "Tulsa",
@@ -478,17 +501,20 @@ taxShortFall = do
       }] [District {
             districtName = DistrictName "Tulsa",
             availableFunds = Amount 0,
-            categoryDefaultFunding = fromList [(Defense, Amount 10)]
+            categoryDefaultFunding = fromList [(Defense, Amount 10)],
+            billSpecificFunding = empty
             },
           District {
             districtName = DistrictName "Idaho",
             availableFunds = Amount 0,
-            categoryDefaultFunding = fromList [(Defense, Amount 5)]
+            categoryDefaultFunding = fromList [(Defense, Amount 5)],
+            billSpecificFunding = empty
             },
           District {
             districtName = DistrictName "Attica",
             availableFunds = Amount 0,
-            categoryDefaultFunding = fromList [(Defense, Amount 5)]
+            categoryDefaultFunding = fromList [(Defense, Amount 5)],
+            billSpecificFunding = empty
             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
                                          funds = [Fund {
                                                      district = DistrictName "Tulsa",
@@ -511,17 +537,20 @@ taxShortFall = do
       }] [District {
             districtName = DistrictName "Tulsa",
             availableFunds = Amount 100,
-            categoryDefaultFunding = fromList [(Defense, Amount 200000)]
+            categoryDefaultFunding = fromList [(Defense, Amount 200000)],
+            billSpecificFunding = empty
             },
           District {
             districtName = DistrictName "Idaho",
             availableFunds = Amount 50,
-            categoryDefaultFunding = fromList [(Defense, Amount 200000)]
+            categoryDefaultFunding = fromList [(Defense, Amount 200000)],
+            billSpecificFunding = empty
             },
           District {
             districtName = DistrictName "Attica",
             availableFunds = Amount 50,
-            categoryDefaultFunding = fromList [(Defense, Amount 200000)]
+            categoryDefaultFunding = fromList [(Defense, Amount 200000)],
+            billSpecificFunding = empty
             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
                                          funds = [Fund {
                                                      district = DistrictName "Tulsa",
@@ -548,17 +577,20 @@ taxExcess = do
       }] [District {
             districtName = DistrictName "Tulsa",
             availableFunds = Amount 200000,
-            categoryDefaultFunding = fromList [(Defense, Amount 200000)]
+            categoryDefaultFunding = fromList [(Defense, Amount 200000)],
+            billSpecificFunding = empty
             },
           District {
             districtName = DistrictName "Idaho",
             availableFunds = Amount 50,
-            categoryDefaultFunding = fromList [(Defense, Amount 200000)]
+            categoryDefaultFunding = fromList [(Defense, Amount 200000)],
+            billSpecificFunding = empty
             },
           District {
             districtName = DistrictName "Attica",
             availableFunds = Amount 50,
-            categoryDefaultFunding = fromList [(Defense, Amount 200000)]
+            categoryDefaultFunding = fromList [(Defense, Amount 200000)],
+            billSpecificFunding = empty
             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
                                          funds = [Fund {
                                                      district = DistrictName "Tulsa",
@@ -581,17 +613,20 @@ taxExcess = do
       }] [District {
             districtName = DistrictName "Tulsa",
             availableFunds = Amount 200000,
-            categoryDefaultFunding = fromList [(Defense, Amount 200000)]
+            categoryDefaultFunding = fromList [(Defense, Amount 200000)],
+            billSpecificFunding = empty
             },
           District {
             districtName = DistrictName "Idaho",
             availableFunds = Amount 50,
-            categoryDefaultFunding = fromList [(Defense, Amount 200000)]
+            categoryDefaultFunding = fromList [(Defense, Amount 200000)],
+            billSpecificFunding = empty
             },
           District {
             districtName = DistrictName "Attica",
             availableFunds = Amount 200000,
-            categoryDefaultFunding = fromList [(Defense, Amount 200000)]
+            categoryDefaultFunding = fromList [(Defense, Amount 200000)],
+            billSpecificFunding = empty
             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
                                          funds = [Fund {
                                                      district = DistrictName "Tulsa",
@@ -614,17 +649,20 @@ taxExcess = do
       }] [District {
             districtName = DistrictName "Tulsa",
             availableFunds = Amount 200000,
-            categoryDefaultFunding = fromList [(Defense, Amount 200000)]
+            categoryDefaultFunding = fromList [(Defense, Amount 200000)],
+            billSpecificFunding = empty
             },
           District {
             districtName = DistrictName "Idaho",
             availableFunds = Amount 3000,
-            categoryDefaultFunding = fromList [(Defense, Amount 200000)]
+            categoryDefaultFunding = fromList [(Defense, Amount 200000)],
+            billSpecificFunding = empty
             },
           District {
             districtName = DistrictName "Attica",
             availableFunds = Amount 1000,
-            categoryDefaultFunding = fromList [(Defense, Amount 200000)]
+            categoryDefaultFunding = fromList [(Defense, Amount 200000)],
+            billSpecificFunding = empty
             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
                                          funds = [Fund {
                                                      district = DistrictName "Tulsa",

@@ -40,6 +40,14 @@
         }
       ],
       "billSpecificFunding": [
+        {
+          "bill": "An Act to Increase Retirement Benefits for Veterans",
+          "amount": 500
+        },
+        {
+          "bill": "An Act to Fund the Development of Longer-Lasting Paper",
+          "amount": 7500
+        }
       ],
       "caps": [
       ]
@@ -83,6 +91,14 @@
         }
       ],
       "billSpecificFunding": [
+        {
+          "bill": "An Act to Construct the Great Wall of Malodivo",
+          "amount": 100000
+        },
+        {
+          "bill": "An Act to Fund the Development of Longer-Lasting Paper",
+          "amount": 0
+        }
       ],
       "caps": [
       ]

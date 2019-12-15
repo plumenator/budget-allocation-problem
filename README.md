@@ -17,7 +17,7 @@ $ stack exec $(basename `pwd`)-exe < sample-input.json | jq
           "district": "Southern Palolene"
         },
         {
-          "amount": 10000,
+          "amount": 100000,
           "district": "Lakos"
         }
       ]
@@ -43,7 +43,7 @@ $ stack exec $(basename `pwd`)-exe < sample-input.json | jq
       "billName": "An Act to Fund the Development of Longer-Lasting Paper",
       "funds": [
         {
-          "amount": 5000,
+          "amount": 7500,
           "district": "Palolene"
         },
         {
@@ -51,7 +51,7 @@ $ stack exec $(basename `pwd`)-exe < sample-input.json | jq
           "district": "Southern Palolene"
         },
         {
-          "amount": 500,
+          "amount": 0,
           "district": "Lakos"
         }
       ]
@@ -60,7 +60,7 @@ $ stack exec $(basename `pwd`)-exe < sample-input.json | jq
       "billName": "An Act to Increase Retirement Benefits for Veterans",
       "funds": [
         {
-          "amount": 3000,
+          "amount": 500,
           "district": "Palolene"
         },
         {

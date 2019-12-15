@@ -23,7 +23,8 @@ billsFromInput I.Input { I.bills = bills }
 data District = District {
   districtName :: DistrictName,
   availableFunds :: Amount,
-  categoryDefaultFunding :: Map Category Amount
+  categoryDefaultFunding :: Map Category Amount,
+  billSpecificFunding :: Map BillName Amount
   }
   deriving (Show, Eq)
 
@@ -31,15 +32,20 @@ toDistrict :: I.District -> Either String District
 toDistrict I.District { I.districtName = dname,
                         I.availableFunds = afunds,
                         I.categoryDefaultFunding = defaults,
-                        I.billSpecificFunding = [],
+                        I.billSpecificFunding = specifics,
                         I.caps = [] } = Right District { districtName = dname,
                                                          availableFunds = afunds,
-                                                         categoryDefaultFunding = toCategoryDefaultMap defaults }
-toDistrict _ = Left "There shouldn't be any billSpecificFunding or caps"
+                                                         categoryDefaultFunding = toCategoryDefaultMap defaults,
+                                                         billSpecificFunding = toBillSpecificFundingMap specifics }
+toDistrict _ = Left "There shouldn't be any caps"
 
 toCategoryDefaultMap :: [I.CategoryDefault] -> Map Category Amount
 toCategoryDefaultMap = fromList . fmap toTuple where
   toTuple I.CategoryDefault { I.defaultCategory = c, I.defaultAmount = a } = (c, a)
+
+toBillSpecificFundingMap :: [I.BillSpecific] -> Map BillName Amount
+toBillSpecificFundingMap = fromList . fmap toTuple where
+  toTuple I.BillSpecific { I.bill = b, I.specificAmount = a } = (b, a)
 
 districtsFromInput :: I.Input -> Either String [District]
 districtsFromInput I.Input { I.districts = districts }

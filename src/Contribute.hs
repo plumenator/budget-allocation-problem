@@ -17,14 +17,17 @@ contribute allBills allDistricts = fmap contribution allBills where
     contributionProportion district = ratio (provided district) totalProvidedFunds
     totalProvidedFunds = Prelude.foldr add (Amount 0) (fmap provided allDistricts)
     provided district = min billAllocated (billAvailableFunds bill (ratio billAllocated totalAllocated) district) where
-      billAllocated = categoryAllocation (category bill) district
-      totalAllocated = Prelude.foldr add (Amount 0) [categoryAllocation (category b) district | b <- allBills]
+      billAllocated = billAllocation bill district
+      totalAllocated = Prelude.foldr add (Amount 0) [billAllocation b district | b <- allBills]
 
 billAvailableFunds :: Bill -> Rational -> District -> Amount
 billAvailableFunds bill ratio district = share ratio (availableFunds district)
 
 share :: Rational -> Amount -> Amount
 share ratio (Amount total) = Amount $ (numerator ratio) * total `div` (denominator ratio)
+
+billAllocation :: Bill -> District -> Amount
+billAllocation bill district = Map.findWithDefault (categoryAllocation (category bill) district) (billName bill) (billSpecificFunding district)
 
 categoryAllocation :: Category -> District -> Amount
 categoryAllocation  category District { categoryDefaultFunding = defaults } = Map.findWithDefault (Amount 0) category defaults
