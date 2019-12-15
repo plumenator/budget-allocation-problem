@@ -25,3 +25,8 @@ $ stack exec $(basename `pwd`)-exe < sample-input.json | jq
   ]
 }
 ```
+
+## Test
+```shell
+$ stack test --fast
+```
