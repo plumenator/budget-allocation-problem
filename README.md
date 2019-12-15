@@ -37,3 +37,8 @@ $ stack test --fast
 1. Empty `caps`
 1. Only 3 categories: `Defense`, `Science` and `Welfare`
 1. ASCII encoded input
+
+## Limitations
+1. Due to rounding, a bill might fall short of funds even when a single
+   district can fund it
+
