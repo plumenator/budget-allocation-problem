@@ -235,19 +235,19 @@ multipleBillsOneDistrict = do
                             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
                                                           funds = [Fund {
                                                                       district = DistrictName "Tulsa",
-                                                                      Contribute.amount = Amount 500
+                                                                      Contribute.amount = Amount 322
                                                                       }]
                                                         },
                                             Contribution { Contribute.billName = BillName "Another bill",
                                                           funds = [Fund {
                                                                       district = DistrictName "Tulsa",
-                                                                      Contribute.amount = Amount 2500
+                                                                      Contribute.amount = Amount 3225
                                                                       }]
                                                         },
                                             Contribution { Contribute.billName = BillName "Yet another bill",
                                                           funds = [Fund {
                                                                       district = DistrictName "Tulsa",
-                                                                      Contribute.amount = Amount 5000
+                                                                      Contribute.amount = Amount 6451
                                                                       }]
                                                         }]
     it "contributes proportionally when a category cap is provided for a category with two bills" $
@@ -279,25 +279,25 @@ multipleBillsOneDistrict = do
                             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
                                                           funds = [Fund {
                                                                       district = DistrictName "Tulsa",
-                                                                      Contribute.amount = Amount 250
+                                                                      Contribute.amount = Amount 161
                                                                       }]
                                                         },
                                             Contribution { Contribute.billName = BillName "The same category",
                                                            funds = [Fund {
                                                                        district = DistrictName "Tulsa",
-                                                                       Contribute.amount = Amount 250
+                                                                       Contribute.amount = Amount 161
                                                                        }]
                                                          },
                                             Contribution { Contribute.billName = BillName "Another bill",
                                                           funds = [Fund {
                                                                       district = DistrictName "Tulsa",
-                                                                      Contribute.amount = Amount 2000
+                                                                      Contribute.amount = Amount 3225
                                                                       }]
                                                         },
                                             Contribution { Contribute.billName = BillName "Yet another bill",
                                                           funds = [Fund {
                                                                       district = DistrictName "Tulsa",
-                                                                      Contribute.amount = Amount 4000
+                                                                      Contribute.amount = Amount 6451
                                                                       }]
                                                         }]
 

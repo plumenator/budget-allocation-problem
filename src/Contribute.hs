@@ -15,7 +15,7 @@ contribute allBills allDistricts = fmap contribution allBills where
   contribution bill = O.Contribution { O.billName = billName bill,
                                        O.funds = fmap (fund districtProvided totalProvidedFunds requiredFunds) allDistricts } where
     totalProvidedFunds = Prelude.foldr add (Amount 0) (fmap districtProvided allDistricts)
-    districtProvided = billProvided (totalAllocated allBills) (totalCategoryAllocated (category bill) allBills) bill
+    districtProvided = billProvided (totalAllocated allBills) (totalCategoryAllocated allBills) bill
     requiredFunds = amount bill
 
 fund :: (District -> Amount) -> Amount -> Amount -> District -> O.Fund
@@ -26,20 +26,23 @@ fund districtProvided totalProvidedFunds requiredFunds district =
   contributionProportion = ratio districtProvidedFunds totalProvidedFunds
   districtProvidedFunds = districtProvided district
 
-billProvided :: (District -> Amount) -> (District -> Amount) -> Bill -> District -> Amount
+billProvided :: (District -> Amount) -> (Category -> District -> Amount) -> Bill -> District -> Amount
 billProvided totalAllocated totalCategoryAllocated bill district =
-  maybe uncapped (min uncapped) capped where
-    -- proportionality of bill allocation (category default or bill specific)
-    uncapped = min billAllocated (billAvailableFunds (ratio billAllocated (totalAllocated district)) district)
-    -- proportionality of category cap
-    capped = billCap (category bill) (ratio billAllocated (totalCategoryAllocated district)) district
-    billAllocated = billAllocation bill district
+  -- proportionality of bill allocation (category default or bill specific or share of the cap)
+  min billCappedAndAllocated (billAvailableFunds (ratio billCappedAndAllocated (totalAllocated district)) district) where
+  billCappedAndAllocated = billCappedAllocation totalCategoryAllocated bill district
 
 totalAllocated :: [Bill] -> District -> Amount
-totalAllocated bills district = Prelude.foldr add (Amount 0) [billAllocation b district | b <- bills]
+totalAllocated allBills district = Prelude.foldr add (Amount 0) [billCappedAllocation (totalCategoryAllocated allBills) b district | b <- allBills]
 
-totalCategoryAllocated :: Category -> [Bill] -> District -> Amount
-totalCategoryAllocated category bills district = Prelude.foldr add (Amount 0) [billAllocation b district | b <- bills, (Model.category b) == category]
+billCappedAllocation :: (Category -> District -> Amount) -> Bill -> District -> Amount
+billCappedAllocation totalCategoryAllocated bill district = maybe uncapped (min uncapped) capped where
+  uncapped = billAllocation bill district
+    -- proportionality of category cap
+  capped = billCap (category bill) (ratio uncapped (totalCategoryAllocated (category bill) district)) district
+
+totalCategoryAllocated :: [Bill] -> Category -> District -> Amount
+totalCategoryAllocated bills category district = Prelude.foldr add (Amount 0) [billAllocation b district | b <- bills, (Model.category b) == category]
 
 billCap :: Category -> Rational -> District -> Maybe Amount
 billCap category ratio district =  Map.lookup category (caps district) >>= return . share ratio

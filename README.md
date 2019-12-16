@@ -90,8 +90,6 @@ $ stack test --fast
 ## Limitations
 1. Due to rounding, a bill might fall short of funds even when a single
    district can fund it
-1. A district's available funds may not be fully utilized when the
-   caps interact with allocation proportions
 
 ## Improvements
 1. Output available fund balances for districts
