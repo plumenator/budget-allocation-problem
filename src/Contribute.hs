@@ -28,7 +28,7 @@ fund districtProvided totalProvidedFunds requiredFunds district =
 
 billProvided :: (District -> Amount) -> (District -> Amount) -> Bill -> District -> Amount
 billProvided totalAllocated totalCategoryAllocated bill district =
-  case billCap bill (ratio billAllocated (totalCategoryAllocated district)) district of
+  case billCap (category bill) (ratio billAllocated (totalCategoryAllocated district)) district of
     -- proportionality of category cap
     Just capped -> min uncapped capped
     Nothing -> uncapped
@@ -43,8 +43,8 @@ totalAllocated bills district = Prelude.foldr add (Amount 0) [billAllocation b d
 totalCategoryAllocated :: Category -> [Bill] -> District -> Amount
 totalCategoryAllocated category bills district = Prelude.foldr add (Amount 0) [billAllocation b district | b <- bills, (Model.category b) == category]
 
-billCap :: Bill -> Rational -> District -> Maybe Amount
-billCap bill ratio district =  Map.lookup (category bill) (caps district) >>= return . share ratio
+billCap :: Category -> Rational -> District -> Maybe Amount
+billCap category ratio district =  Map.lookup category (caps district) >>= return . share ratio
 
 billAvailableFunds :: Rational -> District -> Amount
 billAvailableFunds ratio district = share ratio (availableFunds district)
