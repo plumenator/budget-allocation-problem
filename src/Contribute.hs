@@ -38,7 +38,7 @@ totalAllocated allBills district = Prelude.foldr add (Amount 0) [billCappedAlloc
 billCappedAllocation :: (Category -> District -> Amount) -> Bill -> District -> Amount
 billCappedAllocation totalCategoryAllocated bill district = maybe uncapped (min uncapped) capped where
   uncapped = billAllocation bill district
-    -- proportionality of category cap
+  -- proportionality of category cap
   capped = billCap (category bill) (ratio uncapped (totalCategoryAllocated (category bill) district)) district
 
 totalCategoryAllocated :: [Bill] -> Category -> District -> Amount
