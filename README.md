@@ -92,6 +92,8 @@ $ stack test --fast
    district can fund it
 
 ## Improvements
+1. Output available fund balances for districts
+1. Output funding deficits for bills
 1. Ensure that a bill is fully funded when possible, maybe by doing another round of allocation
 1. Factor out `.Internal` modules to hide private names from the API,
    but sill making them available for testing
