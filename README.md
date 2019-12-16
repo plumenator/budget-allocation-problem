@@ -4,6 +4,20 @@
 ```shell
 $ stack exec $(basename `pwd`)-exe < sample-input.json | jq
 {
+  "balances": [
+    {
+      "amount": 188301,
+      "district": "Palolene"
+    },
+    {
+      "amount": 137500,
+      "district": "Southern Palolene"
+    },
+    {
+      "amount": 368000,
+      "district": "Lakos"
+    }
+  ],
   "deficits": [
     {
       "amount": 168500,
@@ -110,7 +124,6 @@ $ stack test --fast
    district can fund it
 
 ## Improvements
-1. Output available fund balances for districts
 1. Ensure that a bill is fully funded when possible, maybe by doing another round of allocation
 1. Factor out `.Internal` modules to hide private names from the API,
    but sill making them available for testing

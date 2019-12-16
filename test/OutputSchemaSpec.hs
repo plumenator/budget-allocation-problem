@@ -105,5 +105,13 @@ encodeOutput = do
                      Deficit {
                         deficitBillName = BillName "Another Bill",
                         deficitAmount = Amount 4444
-                        }]
-      } `shouldBe` "{\"deficits\":[{\"amount\":1000,\"billName\":\"A Bill\"},{\"amount\":4444,\"billName\":\"Another Bill\"}],\"contributions\":[{\"billName\":\"A Bill\",\"funds\":[{\"amount\":1000,\"district\":\"Tulsa\"},{\"amount\":3333,\"district\":\"Idaho\"}]},{\"billName\":\"Another Bill\",\"funds\":[{\"amount\":4444,\"district\":\"Tulsa\"},{\"amount\":5555,\"district\":\"Idaho\"}]}]}"
+                        }],
+        balances = [Balance {
+                    balanceDistrict = DistrictName "Tulsa",
+                    balanceAmount = Amount 4444
+                    },
+                  Balance {
+                    balanceDistrict = DistrictName "Idaho",
+                    balanceAmount = Amount 5555
+                    }]
+      } `shouldBe` "{\"balances\":[{\"amount\":4444,\"district\":\"Tulsa\"},{\"amount\":5555,\"district\":\"Idaho\"}],\"deficits\":[{\"amount\":1000,\"billName\":\"A Bill\"},{\"amount\":4444,\"billName\":\"Another Bill\"}],\"contributions\":[{\"billName\":\"A Bill\",\"funds\":[{\"amount\":1000,\"district\":\"Tulsa\"},{\"amount\":3333,\"district\":\"Idaho\"}]},{\"billName\":\"Another Bill\",\"funds\":[{\"amount\":4444,\"district\":\"Tulsa\"},{\"amount\":5555,\"district\":\"Idaho\"}]}]}"

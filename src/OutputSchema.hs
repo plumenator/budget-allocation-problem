@@ -3,6 +3,7 @@
 module OutputSchema (
   Contribution (..),
   Deficit (..),
+  Balance (..),
   Amount (..),
   BillName (..),
   DistrictName (..),
@@ -18,7 +19,8 @@ import Model (Amount (..), BillName (..), DistrictName (..))
 
 data Output = Output {
   contributions :: [Contribution],
-  deficits :: [Deficit]
+  deficits :: [Deficit],
+  balances :: [Balance]
   }
   deriving (Show, Generic, ToJSON, FromJSON, Eq)
 
@@ -52,4 +54,24 @@ instance ToJSON Deficit where
 instance FromJSON Deficit where
   parseJSON = genericParseJSON defaultOptions {
     fieldLabelModifier = modifyDeficitField
+    }
+
+data Balance = Balance {
+  balanceDistrict :: DistrictName,
+  balanceAmount :: Amount
+  }
+  deriving (Show, Generic, Eq)
+
+modifyBalanceField "balanceDistrict" = "district"
+modifyBalanceField "balanceAmount" = "amount"
+modifyBalanceField fieldName  = fieldName
+
+instance ToJSON Balance where
+  toJSON = genericToJSON defaultOptions {
+    fieldLabelModifier = modifyBalanceField
+    }
+
+instance FromJSON Balance where
+  parseJSON = genericParseJSON defaultOptions {
+    fieldLabelModifier = modifyBalanceField
     }
