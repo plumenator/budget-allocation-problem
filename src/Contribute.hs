@@ -21,6 +21,7 @@ contribute allBills allDistricts = fmap contribution allBills where
 fund :: (District -> Amount) -> Amount -> Amount -> District -> O.Fund
 fund districtProvided totalProvidedFunds requiredFunds district =
   O.Fund { O.district = districtName district,
+           -- proportionality of contribution
            O.amount = min districtProvidedFunds (share contributionProportion requiredFunds) } where
   contributionProportion = ratio districtProvidedFunds totalProvidedFunds
   districtProvidedFunds = districtProvided district
@@ -28,9 +29,11 @@ fund districtProvided totalProvidedFunds requiredFunds district =
 billProvided :: (District -> Amount) -> (District -> Amount) -> Bill -> District -> Amount
 billProvided totalAllocated totalCategoryAllocated bill district =
   case billCap bill (ratio billAllocated (totalCategoryAllocated district)) district of
+    -- proportionality of category cap
     Just capped -> min uncapped capped
     Nothing -> uncapped
   where
+    -- proportionality of bill allocation (category default or bill specific)
     uncapped = min billAllocated (billAvailableFunds (ratio billAllocated (totalAllocated district)) district)
     billAllocated = billAllocation bill district
 
