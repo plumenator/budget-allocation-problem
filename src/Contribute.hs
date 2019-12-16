@@ -28,13 +28,11 @@ fund districtProvided totalProvidedFunds requiredFunds district =
 
 billProvided :: (District -> Amount) -> (District -> Amount) -> Bill -> District -> Amount
 billProvided totalAllocated totalCategoryAllocated bill district =
-  case billCap (category bill) (ratio billAllocated (totalCategoryAllocated district)) district of
-    -- proportionality of category cap
-    Just capped -> min uncapped capped
-    Nothing -> uncapped
-  where
+  maybe uncapped (min uncapped) capped where
     -- proportionality of bill allocation (category default or bill specific)
     uncapped = min billAllocated (billAvailableFunds (ratio billAllocated (totalAllocated district)) district)
+    -- proportionality of category cap
+    capped = billCap (category bill) (ratio billAllocated (totalCategoryAllocated district)) district
     billAllocated = billAllocation bill district
 
 totalAllocated :: [Bill] -> District -> Amount
