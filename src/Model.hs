@@ -1,5 +1,6 @@
 module Model (
   add,
+  sub,
   Bill (..),
   billsFromInput,
   BillName (..),
@@ -60,3 +61,6 @@ districtsFromInput I.Input { I.districts = districts }
 
 add :: Amount -> Amount -> Amount
 add (Amount x) (Amount y) = Amount (x + y)
+
+sub :: Amount -> Amount -> Amount
+sub (Amount x) (Amount y) = Amount (x - y)
