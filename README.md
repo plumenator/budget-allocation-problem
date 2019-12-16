@@ -4,6 +4,24 @@
 ```shell
 $ stack exec $(basename `pwd`)-exe < sample-input.json | jq
 {
+  "deficits": [
+    {
+      "amount": 168500,
+      "billName": "An Act to Construct the Great Wall of Malodivo"
+    },
+    {
+      "amount": 31258,
+      "billName": "An Act to Construct Shelters for the Homeless"
+    },
+    {
+      "amount": 4500,
+      "billName": "An Act to Fund the Development of Longer-Lasting Paper"
+    },
+    {
+      "amount": 83543,
+      "billName": "An Act to Increase Retirement Benefits for Veterans"
+    }
+  ],
   "contributions": [
     {
       "billName": "An Act to Construct the Great Wall of Malodivo",
@@ -93,7 +111,6 @@ $ stack test --fast
 
 ## Improvements
 1. Output available fund balances for districts
-1. Output funding deficits for bills
 1. Ensure that a bill is fully funded when possible, maybe by doing another round of allocation
 1. Factor out `.Internal` modules to hide private names from the API,
    but sill making them available for testing

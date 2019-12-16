@@ -97,5 +97,13 @@ encodeOutput = do
                                     district = DistrictName "Idaho",
                                     amount = Amount 5555
                                     }]
+                        }],
+        deficits = [Deficit {
+                        deficitBillName = BillName "A Bill",
+                        deficitAmount = Amount 1000
+                        },
+                     Deficit {
+                        deficitBillName = BillName "Another Bill",
+                        deficitAmount = Amount 4444
                         }]
-      } `shouldBe` "{\"contributions\":[{\"billName\":\"A Bill\",\"funds\":[{\"amount\":1000,\"district\":\"Tulsa\"},{\"amount\":3333,\"district\":\"Idaho\"}]},{\"billName\":\"Another Bill\",\"funds\":[{\"amount\":4444,\"district\":\"Tulsa\"},{\"amount\":5555,\"district\":\"Idaho\"}]}]}"
+      } `shouldBe` "{\"deficits\":[{\"amount\":1000,\"billName\":\"A Bill\"},{\"amount\":4444,\"billName\":\"Another Bill\"}],\"contributions\":[{\"billName\":\"A Bill\",\"funds\":[{\"amount\":1000,\"district\":\"Tulsa\"},{\"amount\":3333,\"district\":\"Idaho\"}]},{\"billName\":\"Another Bill\",\"funds\":[{\"amount\":4444,\"district\":\"Tulsa\"},{\"amount\":5555,\"district\":\"Idaho\"}]}]}"
