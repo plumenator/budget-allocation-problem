@@ -62,9 +62,6 @@ billAllocation bill district = Map.findWithDefault (categoryAllocation (category
 categoryAllocation :: Category -> District -> Amount
 categoryAllocation  category District { categoryDefaultFunding = defaults } = Map.findWithDefault (Amount 0) category defaults
 
-add :: Amount -> Amount -> Amount
-add (Amount x) (Amount y) = Amount (x + y)
-
 ratio :: Amount -> Amount -> Rational
 ratio _ (Amount 0) = 0
 ratio (Amount n) (Amount d) = fromIntegral n / fromIntegral d

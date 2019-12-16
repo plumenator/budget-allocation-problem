@@ -1,4 +1,5 @@
 module Model (
+  add,
   Bill (..),
   billsFromInput,
   BillName (..),
@@ -12,7 +13,7 @@ module Model (
 import Data.Map.Strict
 import Data.Text
 
-import InputSchema (Bill, BillName, Category, Amount, DistrictName)
+import InputSchema (Bill, BillName, Category, Amount (..), DistrictName)
 import qualified InputSchema as I
 
 billsFromInput :: I.Input -> Either String [Bill]
@@ -56,3 +57,6 @@ districtsFromInput :: I.Input -> Either String [District]
 districtsFromInput I.Input { I.districts = districts }
   | Prelude.null districts = Left "Expected at least one District"
   | otherwise = sequence $ fmap toDistrict districts
+
+add :: Amount -> Amount -> Amount
+add (Amount x) (Amount y) = Amount (x + y)
