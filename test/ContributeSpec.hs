@@ -73,6 +73,23 @@ oneBillOneDistrict = do
                                                      Contribute.amount = Amount 10000
                                                      }]
                                        }]
+    it "contributes contribution proportion when a bill specific is provided" $
+      contribute [Bill {
+      Model.billName = BillName "A bill",
+      category = Defense,
+      Model.amount = Amount 200000
+      }] [District {
+            districtName = DistrictName "Tulsa",
+            availableFunds = Amount 10000,
+            categoryDefaultFunding = fromList [(Welfare, Amount 10000), (Science, Amount 10000), (Defense, Amount 10000)],
+            billSpecificFunding = fromList [(BillName "A bill", Amount 500)],
+            caps = empty
+            }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
+                                         funds = [Fund {
+                                                     district = DistrictName "Tulsa",
+                                                     Contribute.amount = Amount 500
+                                                     }]
+                                       }]
 
 multipleBillsOneDistrict :: Spec
 multipleBillsOneDistrict = do
@@ -153,6 +170,45 @@ multipleBillsOneDistrict = do
                                                           funds = [Fund {
                                                                       district = DistrictName "Tulsa",
                                                                       Contribute.amount = Amount 5000
+                                                                      }]
+                                                        }]
+    it "contributes proportionally when a bill specific is provided" $
+      contribute [Bill {
+                     Model.billName = BillName "A bill",
+                     category = Defense,
+                     Model.amount = Amount 200000
+                     },
+                   Bill {
+                     Model.billName = BillName "Another bill",
+                     category = Science,
+                     Model.amount = Amount 200000
+                     },
+                   Bill {
+                     Model.billName = BillName "Yet another bill",
+                     category = Welfare,
+                     Model.amount = Amount 200000
+                     }] [District {
+                            districtName = DistrictName "Tulsa",
+                            availableFunds = Amount 10000,
+                            categoryDefaultFunding = fromList [(Welfare, Amount 10000), (Science, Amount 5000), (Defense, Amount 5000)],
+                            billSpecificFunding = fromList [(BillName "A bill", Amount 500)],
+                            caps = empty
+                            }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
+                                                          funds = [Fund {
+                                                                      district = DistrictName "Tulsa",
+                                                                      Contribute.amount = Amount 322
+                                                                      }]
+                                                        },
+                                            Contribution { Contribute.billName = BillName "Another bill",
+                                                          funds = [Fund {
+                                                                      district = DistrictName "Tulsa",
+                                                                      Contribute.amount = Amount 3225
+                                                                      }]
+                                                        },
+                                            Contribution { Contribute.billName = BillName "Yet another bill",
+                                                          funds = [Fund {
+                                                                      district = DistrictName "Tulsa",
+                                                                      Contribute.amount = Amount 6451
                                                                       }]
                                                         }]
 
@@ -266,6 +322,45 @@ oneBillMultipleDistricts = do
                                          funds = [Fund {
                                                      district = DistrictName "Tulsa",
                                                      Contribute.amount = Amount 10
+                                                     },
+                                                   Fund {
+                                                     district = DistrictName "Idaho",
+                                                     Contribute.amount = Amount 5
+                                                     },
+                                                   Fund {
+                                                     district = DistrictName "Attica",
+                                                     Contribute.amount = Amount 5
+                                                     }]
+                                       }]
+    it "contributes contribution proportion when a bill specific is provided" $
+      contribute [Bill {
+      Model.billName = BillName "A bill",
+      category = Defense,
+      Model.amount = Amount 200000
+      }] [District {
+            districtName = DistrictName "Tulsa",
+            availableFunds = Amount 10000,
+            categoryDefaultFunding = fromList [(Defense, Amount 10)],
+            billSpecificFunding = fromList [(BillName "A bill", Amount 500)],
+            caps = empty
+            },
+          District {
+            districtName = DistrictName "Idaho",
+            availableFunds = Amount 5000,
+            categoryDefaultFunding = fromList [(Defense, Amount 5)],
+            billSpecificFunding = empty,
+            caps = empty
+            },
+          District {
+            districtName = DistrictName "Attica",
+            availableFunds = Amount 5000,
+            categoryDefaultFunding = fromList [(Defense, Amount 5)],
+            billSpecificFunding = empty,
+            caps = empty
+            }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
+                                         funds = [Fund {
+                                                     district = DistrictName "Tulsa",
+                                                     Contribute.amount = Amount 500
                                                      },
                                                    Fund {
                                                      district = DistrictName "Idaho",
@@ -473,6 +568,83 @@ multipleBillsMultipleDistricts = do
                                                           funds = [Fund {
                                                                       district = DistrictName "Tulsa",
                                                                       Contribute.amount = Amount 5000
+                                                                      },
+                                                                   Fund {
+                                                                      district = DistrictName "Idaho",
+                                                                      Contribute.amount = Amount 1250
+                                                                      },
+                                                                   Fund {
+                                                                      district = DistrictName "Attica",
+                                                                      Contribute.amount = Amount 1250
+                                                                      }]
+                                                        },
+                                            Contribution { Contribute.billName = BillName "Another bill",
+                                                          funds = [Fund {
+                                                                      district = DistrictName "Tulsa",
+                                                                      Contribute.amount = Amount 2500
+                                                                      },
+                                                                   Fund {
+                                                                      district = DistrictName "Idaho",
+                                                                      Contribute.amount = Amount 2500
+                                                                      },
+                                                                   Fund {
+                                                                      district = DistrictName "Attica",
+                                                                      Contribute.amount = Amount 1250
+                                                                      }]
+                                                        },
+                                            Contribution { Contribute.billName = BillName "Yet another bill",
+                                                          funds = [Fund {
+                                                                      district = DistrictName "Tulsa",
+                                                                      Contribute.amount = Amount 2500
+                                                                      },
+                                                                   Fund {
+                                                                      district = DistrictName "Idaho",
+                                                                      Contribute.amount = Amount 1250
+                                                                      },
+                                                                   Fund {
+                                                                      district = DistrictName "Attica",
+                                                                      Contribute.amount = Amount 2500
+                                                                      }]
+                                                        }]
+    it "contributes proportionally when all districts sponsor all categories and there's a bill specific" $
+      contribute [Bill {
+                     Model.billName = BillName "A bill",
+                     category = Defense,
+                     Model.amount = Amount 200000
+                     },
+                   Bill {
+                     Model.billName = BillName "Another bill",
+                     category = Science,
+                     Model.amount = Amount 200000
+                     },
+                   Bill {
+                     Model.billName = BillName "Yet another bill",
+                     category = Welfare,
+                     Model.amount = Amount 200000
+                     }] [District {
+                            districtName = DistrictName "Tulsa",
+                            availableFunds = Amount 10000,
+                            categoryDefaultFunding = fromList [(Defense, Amount 5000), (Science, Amount 2500), (Welfare, Amount 2500)],
+                            billSpecificFunding = fromList [(BillName "A bill", Amount 500)],
+                            caps = empty
+                            },
+                         District {
+                            districtName = DistrictName "Idaho",
+                            availableFunds = Amount 5000,
+                            categoryDefaultFunding = fromList [(Defense, Amount 1250), (Science, Amount 2500), (Welfare, Amount 1250)],
+                            billSpecificFunding = empty,
+                            caps = empty
+                            },
+                         District {
+                            districtName = DistrictName "Attica",
+                            availableFunds = Amount 5000,
+                            categoryDefaultFunding = fromList [(Defense, Amount 1250), (Science, Amount 1250), (Welfare, Amount 2500)],
+                            billSpecificFunding = empty,
+                            caps = empty
+                            }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
+                                                          funds = [Fund {
+                                                                      district = DistrictName "Tulsa",
+                                                                      Contribute.amount = Amount 500
                                                                       },
                                                                    Fund {
                                                                       district = DistrictName "Idaho",
