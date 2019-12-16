@@ -11,12 +11,15 @@ import Model
 import qualified OutputSchema as O
 
 contribute :: [Bill] -> [District] -> [O.Contribution]
-contribute allBills allDistricts = fmap contribution allBills where
-  contribution bill = O.Contribution { O.billName = billName bill,
-                                       O.funds = fmap (fund districtProvided totalProvidedFunds requiredFunds) allDistricts } where
-    totalProvidedFunds = Prelude.foldr add (Amount 0) (fmap districtProvided allDistricts)
-    districtProvided = billProvided (totalAllocated allBills) (totalCategoryAllocated allBills) bill
-    requiredFunds = amount bill
+contribute allBills allDistricts = fmap (contribution (totalAllocated allBills) (totalCategoryAllocated allBills) allDistricts) allBills
+
+contribution :: (District -> Amount) -> (Category -> District -> Amount) -> [District] -> Bill -> O.Contribution
+contribution totalAllocated totalCategoryAllocated allDistricts bill =
+  O.Contribution { O.billName = billName bill,
+                   O.funds = fmap (fund districtProvided totalProvidedFunds requiredFunds) allDistricts } where
+  totalProvidedFunds = Prelude.foldr add (Amount 0) (fmap districtProvided allDistricts)
+  districtProvided = billProvided totalAllocated totalCategoryAllocated bill
+  requiredFunds = amount bill
 
 fund :: (District -> Amount) -> Amount -> Amount -> District -> O.Fund
 fund districtProvided totalProvidedFunds requiredFunds district =
