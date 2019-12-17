@@ -16,18 +16,17 @@ contribute allBills allDistricts = fmap (contribution (totalAllocated allBills) 
 contribution :: (District -> Amount) -> (Category -> District -> Amount) -> [District] -> Bill -> O.Contribution
 contribution totalAllocated totalCategoryAllocated allDistricts bill =
   O.Contribution { O.billName = billName bill,
-                   O.funds = fmap (fund districtProvided totalProvidedFunds requiredFunds) allDistricts } where
+                   O.funds = fmap (fund contributionProportion totalProvidedFunds requiredFunds) allDistricts } where
+  contributionProportion district = ratio (districtProvided district) totalProvidedFunds
   totalProvidedFunds = Prelude.foldr add (Amount 0) (fmap districtProvided allDistricts)
   districtProvided = billProvided totalAllocated totalCategoryAllocated bill
   requiredFunds = amount bill
 
-fund :: (District -> Amount) -> Amount -> Amount -> District -> O.Fund
-fund districtProvided totalProvidedFunds requiredFunds district =
+fund :: (District -> Rational) -> Amount -> Amount -> District -> O.Fund
+fund districtContribution totalProvidedFunds requiredFunds district =
   O.Fund { O.district = districtName district,
            -- proportionality of contribution
-           O.amount = min districtProvidedFunds (share contributionProportion requiredFunds) } where
-  contributionProportion = ratio districtProvidedFunds totalProvidedFunds
-  districtProvidedFunds = districtProvided district
+           O.amount = share (districtContribution district) (min totalProvidedFunds requiredFunds) }
 
 billProvided :: (District -> Amount) -> (Category -> District -> Amount) -> Bill -> District -> Amount
 billProvided totalAllocated totalCategoryAllocated bill district =
