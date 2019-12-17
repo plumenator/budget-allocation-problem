@@ -28,14 +28,12 @@ decodeBillName = do
 decodeCategory :: Spec
 decodeCategory = do
   describe "Decode Category from JSON" $ do
-    it "returns Just Defense when given \"Defense\"" $
-      decode "\"Defense\"" `shouldBe` Just Defense
-    it "returns Just Welfare when given \"Welfare\"" $
-      decode "\"Welfare\"" `shouldBe` Just Welfare
-    it "returns Just Science when given \"Science\"" $
-      decode "\"Science\"" `shouldBe` Just Science
-    it "returns Nothing when given \"NotACategory\"" $
-      (decode "\"NotACategory\"" :: Maybe Category) `shouldBe` Nothing
+    it "returns Just (Category \"Defense\") when given \"Defense\"" $
+      decode "\"Defense\"" `shouldBe` Just (Category "Defense")
+    it "returns Just (Category \"Welfare\") when given \"Welfare\"" $
+      decode "\"Welfare\"" `shouldBe` Just (Category "Welfare")
+    it "returns Just (Category \"Science\") when given \"Science\"" $
+      decode "\"Science\"" `shouldBe` Just (Category "Science")
 
 decodeAmount :: Spec
 decodeAmount = do
@@ -53,7 +51,7 @@ decodeBill = do
                    \ \"amount\": 200000 \
                    \ }" `shouldBe` Right (Bill {
                                              billName = BillName "An Act to Construct the Great Wall of Malodivo",
-                                             category = Defense,
+                                             category = Category "Defense",
                                              amount = Amount 200000
                                              })
     it "returns Nothing when given a bad JSON Bill" $
@@ -77,7 +75,7 @@ decodeCategoryDefault = do
                    \ \"category\": \"Defense\", \
                    \ \"amount\": 1000 \
                    \ }" `shouldBe` Right (CategoryDefault {
-                                             defaultCategory = Defense,
+                                             defaultCategory = Category "Defense",
                                              defaultAmount = Amount 1000
                                              })
 
@@ -101,7 +99,7 @@ decodeCap = do
                    \ \"category\": \"Defense\", \
                    \ \"amount\": 1000 \
                    \ }" `shouldBe` Right (Cap {
-                                             capCategory = Defense,
+                                             capCategory = Category "Defense",
                                              capAmount = Amount 1000
                                              })
 
@@ -201,12 +199,12 @@ sampleInput = Input {
   bills = [
     Bill {
       billName = BillName "An Act to Construct the Great Wall of Malodivo",
-      category = Defense,
+      category = Category "Defense",
       amount = Amount 200000
     },
     Bill {
       billName = BillName "An Act to Construct Shelters for the Homeless",
-      category = Welfare,
+      category = Category "Welfare",
       amount = Amount 40000
     }
   ],
@@ -216,15 +214,15 @@ sampleInput = Input {
       availableFunds = Amount 200000,
       categoryDefaultFunding = [
         CategoryDefault {
-          defaultCategory = Defense,
+          defaultCategory = Category "Defense",
           defaultAmount = Amount 1000
         },
         CategoryDefault {
-          defaultCategory = Welfare,
+          defaultCategory = Category "Welfare",
           defaultAmount = Amount 3000
         },
         CategoryDefault {
-          defaultCategory = Science,
+          defaultCategory = Category "Science",
           defaultAmount = Amount 5000
         }
       ],
@@ -240,15 +238,15 @@ sampleInput = Input {
       ],
       caps = [
         Cap {
-          capCategory = Defense,
+          capCategory = Category "Defense",
           capAmount = Amount 3000
         },
         Cap {
-          capCategory = Welfare,
+          capCategory = Category "Welfare",
           capAmount = Amount 3199
         },
         Cap {
-          capCategory = Science,
+          capCategory = Category "Science",
           capAmount = Amount 15000
         }
       ]
@@ -258,30 +256,30 @@ sampleInput = Input {
       availableFunds = Amount 150000,
       categoryDefaultFunding = [
         CategoryDefault {
-          defaultCategory = Defense,
+          defaultCategory = Category "Defense",
           defaultAmount = Amount 500
         },
         CategoryDefault {
-          defaultCategory = Welfare,
+          defaultCategory = Category "Welfare",
           defaultAmount = Amount 5000
         },
         CategoryDefault {
-          defaultCategory = Science,
+          defaultCategory = Category "Science",
           defaultAmount = Amount 2000
         }
       ],
       billSpecificFunding = [],
       caps = [
         Cap {
-          capCategory = Defense,
+          capCategory = Category "Defense",
           capAmount = Amount 10000
         },
         Cap {
-          capCategory = Welfare,
+          capCategory = Category "Welfare",
           capAmount = Amount 10000
         },
         Cap {
-          capCategory = Science,
+          capCategory = Category "Science",
           capAmount = Amount 10000
         }
       ]

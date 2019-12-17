@@ -115,7 +115,6 @@ $ stack test --fast
 ```
 
 ## Assumptions
-1. Only 3 categories: `Defense`, `Science` and `Welfare`
 1. The absence of a default means that there's no allocation for that category
 1. ASCII encoded input
 

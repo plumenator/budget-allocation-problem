@@ -25,7 +25,7 @@ oneBillOneDistrict = do
     it "contributes no funds when no default is provided" $
       contribute [Bill {
       Model.billName = BillName "A bill",
-      category = Defense,
+      category = Category "Defense",
       Model.amount = Amount 200000
       }] [District {
             districtName = DistrictName "Tulsa",
@@ -42,12 +42,12 @@ oneBillOneDistrict = do
     it "contributes all allocated funds when a default is provided only for that category" $
       contribute [Bill {
       Model.billName = BillName "A bill",
-      category = Defense,
+      category = Category "Defense",
       Model.amount = Amount 200000
       }] [District {
             districtName = DistrictName "Tulsa",
             availableFunds = Amount 10000,
-            categoryDefaultFunding = fromList [(Defense, Amount 10)],
+            categoryDefaultFunding = fromList [(Category "Defense", Amount 10)],
             billSpecificFunding = empty,
             caps = empty
             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
@@ -59,12 +59,12 @@ oneBillOneDistrict = do
     it "contributes contribution proportion when a default is provided for multiple categories" $
       contribute [Bill {
       Model.billName = BillName "A bill",
-      category = Defense,
+      category = Category "Defense",
       Model.amount = Amount 200000
       }] [District {
             districtName = DistrictName "Tulsa",
             availableFunds = Amount 10000,
-            categoryDefaultFunding = fromList [(Welfare, Amount 10000), (Science, Amount 10000), (Defense, Amount 10000)],
+            categoryDefaultFunding = fromList [(Category "Welfare", Amount 10000), (Category "Science", Amount 10000), (Category "Defense", Amount 10000)],
             billSpecificFunding = empty,
             caps = empty
             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
@@ -76,12 +76,12 @@ oneBillOneDistrict = do
     it "contributes contribution proportion when a bill specific is provided" $
       contribute [Bill {
       Model.billName = BillName "A bill",
-      category = Defense,
+      category = Category "Defense",
       Model.amount = Amount 200000
       }] [District {
             districtName = DistrictName "Tulsa",
             availableFunds = Amount 10000,
-            categoryDefaultFunding = fromList [(Welfare, Amount 10000), (Science, Amount 10000), (Defense, Amount 10000)],
+            categoryDefaultFunding = fromList [(Category "Welfare", Amount 10000), (Category "Science", Amount 10000), (Category "Defense", Amount 10000)],
             billSpecificFunding = fromList [(BillName "A bill", Amount 500)],
             caps = empty
             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
@@ -97,17 +97,17 @@ multipleBillsOneDistrict = do
     it "contributes no funds when no default is provided" $
       contribute [Bill {
                      Model.billName = BillName "A bill",
-                     category = Defense,
+                     category = Category "Defense",
                      Model.amount = Amount 200000
                      },
                    Bill {
                      Model.billName = BillName "Another bill",
-                     category = Science,
+                     category = Category "Science",
                      Model.amount = Amount 200000
                      },
                    Bill {
                      Model.billName = BillName "Yet another bill",
-                     category = Welfare,
+                     category = Category "Welfare",
                      Model.amount = Amount 200000
                      }] [District {
                             districtName = DistrictName "Tulsa",
@@ -136,22 +136,22 @@ multipleBillsOneDistrict = do
     it "contributes proportionally when a default is provided for all categories" $
       contribute [Bill {
                      Model.billName = BillName "A bill",
-                     category = Defense,
+                     category = Category "Defense",
                      Model.amount = Amount 200000
                      },
                    Bill {
                      Model.billName = BillName "Another bill",
-                     category = Science,
+                     category = Category "Science",
                      Model.amount = Amount 200000
                      },
                    Bill {
                      Model.billName = BillName "Yet another bill",
-                     category = Welfare,
+                     category = Category "Welfare",
                      Model.amount = Amount 200000
                      }] [District {
                             districtName = DistrictName "Tulsa",
                             availableFunds = Amount 10000,
-                            categoryDefaultFunding = fromList [(Welfare, Amount 10000), (Science, Amount 5000), (Defense, Amount 5000)],
+                            categoryDefaultFunding = fromList [(Category "Welfare", Amount 10000), (Category "Science", Amount 5000), (Category "Defense", Amount 5000)],
                             billSpecificFunding = empty,
                             caps = empty
                             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
@@ -175,22 +175,22 @@ multipleBillsOneDistrict = do
     it "contributes proportionally when a bill specific is provided" $
       contribute [Bill {
                      Model.billName = BillName "A bill",
-                     category = Defense,
+                     category = Category "Defense",
                      Model.amount = Amount 200000
                      },
                    Bill {
                      Model.billName = BillName "Another bill",
-                     category = Science,
+                     category = Category "Science",
                      Model.amount = Amount 200000
                      },
                    Bill {
                      Model.billName = BillName "Yet another bill",
-                     category = Welfare,
+                     category = Category "Welfare",
                      Model.amount = Amount 200000
                      }] [District {
                             districtName = DistrictName "Tulsa",
                             availableFunds = Amount 10000,
-                            categoryDefaultFunding = fromList [(Welfare, Amount 10000), (Science, Amount 5000), (Defense, Amount 5000)],
+                            categoryDefaultFunding = fromList [(Category "Welfare", Amount 10000), (Category "Science", Amount 5000), (Category "Defense", Amount 5000)],
                             billSpecificFunding = fromList [(BillName "A bill", Amount 500)],
                             caps = empty
                             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
@@ -214,24 +214,24 @@ multipleBillsOneDistrict = do
     it "contributes proportionally when a category cap is provided" $
       contribute [Bill {
                      Model.billName = BillName "A bill",
-                     category = Defense,
+                     category = Category "Defense",
                      Model.amount = Amount 200000
                      },
                    Bill {
                      Model.billName = BillName "Another bill",
-                     category = Science,
+                     category = Category "Science",
                      Model.amount = Amount 200000
                      },
                    Bill {
                      Model.billName = BillName "Yet another bill",
-                     category = Welfare,
+                     category = Category "Welfare",
                      Model.amount = Amount 200000
                      }] [District {
                             districtName = DistrictName "Tulsa",
                             availableFunds = Amount 10000,
-                            categoryDefaultFunding = fromList [(Welfare, Amount 10000), (Science, Amount 5000), (Defense, Amount 5000)],
+                            categoryDefaultFunding = fromList [(Category "Welfare", Amount 10000), (Category "Science", Amount 5000), (Category "Defense", Amount 5000)],
                             billSpecificFunding = empty,
-                            caps = fromList [(Defense, Amount 500)]
+                            caps = fromList [(Category "Defense", Amount 500)]
                             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
                                                           funds = [Fund {
                                                                       district = DistrictName "Tulsa",
@@ -253,29 +253,29 @@ multipleBillsOneDistrict = do
     it "contributes proportionally when a category cap is provided for a category with two bills" $
       contribute [Bill {
                      Model.billName = BillName "A bill",
-                     category = Defense,
+                     category = Category "Defense",
                      Model.amount = Amount 200000
                      },
                   Bill {
                      Model.billName = BillName "The same category",
-                     category = Defense,
+                     category = Category "Defense",
                      Model.amount = Amount 200000
                      },
                    Bill {
                      Model.billName = BillName "Another bill",
-                     category = Science,
+                     category = Category "Science",
                      Model.amount = Amount 200000
                      },
                    Bill {
                      Model.billName = BillName "Yet another bill",
-                     category = Welfare,
+                     category = Category "Welfare",
                      Model.amount = Amount 200000
                      }] [District {
                             districtName = DistrictName "Tulsa",
                             availableFunds = Amount 10000,
-                            categoryDefaultFunding = fromList [(Welfare, Amount 10000), (Science, Amount 5000), (Defense, Amount 5000)],
+                            categoryDefaultFunding = fromList [(Category "Welfare", Amount 10000), (Category "Science", Amount 5000), (Category "Defense", Amount 5000)],
                             billSpecificFunding = empty,
-                            caps = fromList [(Defense, Amount 500)]
+                            caps = fromList [(Category "Defense", Amount 500)]
                             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
                                                           funds = [Fund {
                                                                       district = DistrictName "Tulsa",
@@ -307,7 +307,7 @@ oneBillMultipleDistricts = do
     it "contributes no funds when no default is provided" $
       contribute [Bill {
       Model.billName = BillName "A bill",
-      category = Defense,
+      category = Category "Defense",
       Model.amount = Amount 200000
       }] [District {
             districtName = DistrictName "Tulsa",
@@ -346,12 +346,12 @@ oneBillMultipleDistricts = do
     it "contributes all allocated funds when a default is provided only for that district" $
       contribute [Bill {
       Model.billName = BillName "A bill",
-      category = Defense,
+      category = Category "Defense",
       Model.amount = Amount 200000
       }] [District {
             districtName = DistrictName "Tulsa",
             availableFunds = Amount 10000,
-            categoryDefaultFunding = fromList [(Defense, Amount 10)],
+            categoryDefaultFunding = fromList [(Category "Defense", Amount 10)],
             billSpecificFunding = empty,
             caps = empty
             },
@@ -385,26 +385,26 @@ oneBillMultipleDistricts = do
     it "contributes contribution proportion when a default is provided only for multiple districts" $
       contribute [Bill {
       Model.billName = BillName "A bill",
-      category = Defense,
+      category = Category "Defense",
       Model.amount = Amount 200000
       }] [District {
             districtName = DistrictName "Tulsa",
             availableFunds = Amount 10000,
-            categoryDefaultFunding = fromList [(Defense, Amount 10)],
+            categoryDefaultFunding = fromList [(Category "Defense", Amount 10)],
             billSpecificFunding = empty,
             caps = empty
             },
           District {
             districtName = DistrictName "Idaho",
             availableFunds = Amount 5000,
-            categoryDefaultFunding = fromList [(Defense, Amount 5)],
+            categoryDefaultFunding = fromList [(Category "Defense", Amount 5)],
             billSpecificFunding = empty,
             caps = empty
             },
           District {
             districtName = DistrictName "Attica",
             availableFunds = Amount 5000,
-            categoryDefaultFunding = fromList [(Defense, Amount 5)],
+            categoryDefaultFunding = fromList [(Category "Defense", Amount 5)],
             billSpecificFunding = empty,
             caps = empty
             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
@@ -424,26 +424,26 @@ oneBillMultipleDistricts = do
     it "contributes contribution proportion when a bill specific is provided" $
       contribute [Bill {
       Model.billName = BillName "A bill",
-      category = Defense,
+      category = Category "Defense",
       Model.amount = Amount 200000
       }] [District {
             districtName = DistrictName "Tulsa",
             availableFunds = Amount 10000,
-            categoryDefaultFunding = fromList [(Defense, Amount 10)],
+            categoryDefaultFunding = fromList [(Category "Defense", Amount 10)],
             billSpecificFunding = fromList [(BillName "A bill", Amount 500)],
             caps = empty
             },
           District {
             districtName = DistrictName "Idaho",
             availableFunds = Amount 5000,
-            categoryDefaultFunding = fromList [(Defense, Amount 5)],
+            categoryDefaultFunding = fromList [(Category "Defense", Amount 5)],
             billSpecificFunding = empty,
             caps = empty
             },
           District {
             districtName = DistrictName "Attica",
             availableFunds = Amount 5000,
-            categoryDefaultFunding = fromList [(Defense, Amount 5)],
+            categoryDefaultFunding = fromList [(Category "Defense", Amount 5)],
             billSpecificFunding = empty,
             caps = empty
             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
@@ -463,26 +463,26 @@ oneBillMultipleDistricts = do
     it "contributes contribution proportion when a category cap is provided" $
       contribute [Bill {
       Model.billName = BillName "A bill",
-      category = Defense,
+      category = Category "Defense",
       Model.amount = Amount 200000
       }] [District {
             districtName = DistrictName "Tulsa",
             availableFunds = Amount 10000,
-            categoryDefaultFunding = fromList [(Defense, Amount 1000000)],
+            categoryDefaultFunding = fromList [(Category "Defense", Amount 1000000)],
             billSpecificFunding = empty,
-            caps = fromList [(Defense, Amount 500)]
+            caps = fromList [(Category "Defense", Amount 500)]
             },
           District {
             districtName = DistrictName "Idaho",
             availableFunds = Amount 5000,
-            categoryDefaultFunding = fromList [(Defense, Amount 5)],
+            categoryDefaultFunding = fromList [(Category "Defense", Amount 5)],
             billSpecificFunding = empty,
             caps = empty
             },
           District {
             districtName = DistrictName "Attica",
             availableFunds = Amount 5000,
-            categoryDefaultFunding = fromList [(Defense, Amount 5)],
+            categoryDefaultFunding = fromList [(Category "Defense", Amount 5)],
             billSpecificFunding = empty,
             caps = empty
             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
@@ -506,17 +506,17 @@ multipleBillsMultipleDistricts = do
     it "contributes no funds when no default is provided" $
       contribute [Bill {
                      Model.billName = BillName "A bill",
-                     category = Defense,
+                     category = Category "Defense",
                      Model.amount = Amount 200000
                      },
                    Bill {
                      Model.billName = BillName "Another bill",
-                     category = Science,
+                     category = Category "Science",
                      Model.amount = Amount 200000
                      },
                    Bill {
                      Model.billName = BillName "Yet another bill",
-                     category = Welfare,
+                     category = Category "Welfare",
                      Model.amount = Amount 200000
                      }] [District {
                             districtName = DistrictName "Tulsa",
@@ -583,36 +583,36 @@ multipleBillsMultipleDistricts = do
     it "contributes all allocated funds when each district sponsors one category" $
       contribute [Bill {
                      Model.billName = BillName "A bill",
-                     category = Defense,
+                     category = Category "Defense",
                      Model.amount = Amount 200000
                      },
                    Bill {
                      Model.billName = BillName "Another bill",
-                     category = Science,
+                     category = Category "Science",
                      Model.amount = Amount 200000
                      },
                    Bill {
                      Model.billName = BillName "Yet another bill",
-                     category = Welfare,
+                     category = Category "Welfare",
                      Model.amount = Amount 200000
                      }] [District {
                             districtName = DistrictName "Tulsa",
                             availableFunds = Amount 10000,
-                            categoryDefaultFunding = fromList [(Defense, Amount 200000)],
+                            categoryDefaultFunding = fromList [(Category "Defense", Amount 200000)],
                             billSpecificFunding = empty,
                             caps = empty
                             },
                          District {
                             districtName = DistrictName "Idaho",
                             availableFunds = Amount 5000,
-                            categoryDefaultFunding = fromList [(Science, Amount 200000)],
+                            categoryDefaultFunding = fromList [(Category "Science", Amount 200000)],
                             billSpecificFunding = empty,
                             caps = empty
                             },
                          District {
                             districtName = DistrictName "Attica",
                             availableFunds = Amount 5000,
-                            categoryDefaultFunding = fromList [(Welfare, Amount 200000)],
+                            categoryDefaultFunding = fromList [(Category "Welfare", Amount 200000)],
                             billSpecificFunding = empty,
                             caps = empty
                             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
@@ -660,36 +660,36 @@ multipleBillsMultipleDistricts = do
     it "contributes proportionally when all districts sponsor all categories" $
       contribute [Bill {
                      Model.billName = BillName "A bill",
-                     category = Defense,
+                     category = Category "Defense",
                      Model.amount = Amount 200000
                      },
                    Bill {
                      Model.billName = BillName "Another bill",
-                     category = Science,
+                     category = Category "Science",
                      Model.amount = Amount 200000
                      },
                    Bill {
                      Model.billName = BillName "Yet another bill",
-                     category = Welfare,
+                     category = Category "Welfare",
                      Model.amount = Amount 200000
                      }] [District {
                             districtName = DistrictName "Tulsa",
                             availableFunds = Amount 10000,
-                            categoryDefaultFunding = fromList [(Defense, Amount 5000), (Science, Amount 2500), (Welfare, Amount 2500)],
+                            categoryDefaultFunding = fromList [(Category "Defense", Amount 5000), (Category "Science", Amount 2500), (Category "Welfare", Amount 2500)],
                             billSpecificFunding = empty,
                             caps = empty
                             },
                          District {
                             districtName = DistrictName "Idaho",
                             availableFunds = Amount 5000,
-                            categoryDefaultFunding = fromList [(Defense, Amount 1250), (Science, Amount 2500), (Welfare, Amount 1250)],
+                            categoryDefaultFunding = fromList [(Category "Defense", Amount 1250), (Category "Science", Amount 2500), (Category "Welfare", Amount 1250)],
                             billSpecificFunding = empty,
                             caps = empty
                             },
                          District {
                             districtName = DistrictName "Attica",
                             availableFunds = Amount 5000,
-                            categoryDefaultFunding = fromList [(Defense, Amount 1250), (Science, Amount 1250), (Welfare, Amount 2500)],
+                            categoryDefaultFunding = fromList [(Category "Defense", Amount 1250), (Category "Science", Amount 1250), (Category "Welfare", Amount 2500)],
                             billSpecificFunding = empty,
                             caps = empty
                             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
@@ -737,36 +737,36 @@ multipleBillsMultipleDistricts = do
     it "contributes proportionally when all districts sponsor all categories and there's a bill specific" $
       contribute [Bill {
                      Model.billName = BillName "A bill",
-                     category = Defense,
+                     category = Category "Defense",
                      Model.amount = Amount 200000
                      },
                    Bill {
                      Model.billName = BillName "Another bill",
-                     category = Science,
+                     category = Category "Science",
                      Model.amount = Amount 200000
                      },
                    Bill {
                      Model.billName = BillName "Yet another bill",
-                     category = Welfare,
+                     category = Category "Welfare",
                      Model.amount = Amount 200000
                      }] [District {
                             districtName = DistrictName "Tulsa",
                             availableFunds = Amount 10000,
-                            categoryDefaultFunding = fromList [(Defense, Amount 5000), (Science, Amount 2500), (Welfare, Amount 2500)],
+                            categoryDefaultFunding = fromList [(Category "Defense", Amount 5000), (Category "Science", Amount 2500), (Category "Welfare", Amount 2500)],
                             billSpecificFunding = fromList [(BillName "A bill", Amount 500)],
                             caps = empty
                             },
                          District {
                             districtName = DistrictName "Idaho",
                             availableFunds = Amount 5000,
-                            categoryDefaultFunding = fromList [(Defense, Amount 1250), (Science, Amount 2500), (Welfare, Amount 1250)],
+                            categoryDefaultFunding = fromList [(Category "Defense", Amount 1250), (Category "Science", Amount 2500), (Category "Welfare", Amount 1250)],
                             billSpecificFunding = empty,
                             caps = empty
                             },
                          District {
                             districtName = DistrictName "Attica",
                             availableFunds = Amount 5000,
-                            categoryDefaultFunding = fromList [(Defense, Amount 1250), (Science, Amount 1250), (Welfare, Amount 2500)],
+                            categoryDefaultFunding = fromList [(Category "Defense", Amount 1250), (Category "Science", Amount 1250), (Category "Welfare", Amount 2500)],
                             billSpecificFunding = empty,
                             caps = empty
                             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
@@ -814,36 +814,36 @@ multipleBillsMultipleDistricts = do
     it "contributes proportionally when all districts sponsor all categories and there's a category cap" $
       contribute [Bill {
                      Model.billName = BillName "A bill",
-                     category = Defense,
+                     category = Category "Defense",
                      Model.amount = Amount 200000
                      },
                    Bill {
                      Model.billName = BillName "Another bill",
-                     category = Science,
+                     category = Category "Science",
                      Model.amount = Amount 200000
                      },
                    Bill {
                      Model.billName = BillName "Yet another bill",
-                     category = Welfare,
+                     category = Category "Welfare",
                      Model.amount = Amount 200000
                      }] [District {
                             districtName = DistrictName "Tulsa",
                             availableFunds = Amount 10000,
-                            categoryDefaultFunding = fromList [(Defense, Amount 5000), (Science, Amount 2500), (Welfare, Amount 2500)],
+                            categoryDefaultFunding = fromList [(Category "Defense", Amount 5000), (Category "Science", Amount 2500), (Category "Welfare", Amount 2500)],
                             billSpecificFunding = empty,
-                            caps = fromList [(Defense, Amount 500)]
+                            caps = fromList [(Category "Defense", Amount 500)]
                             },
                          District {
                             districtName = DistrictName "Idaho",
                             availableFunds = Amount 5000,
-                            categoryDefaultFunding = fromList [(Defense, Amount 1250), (Science, Amount 2500), (Welfare, Amount 1250)],
+                            categoryDefaultFunding = fromList [(Category "Defense", Amount 1250), (Category "Science", Amount 2500), (Category "Welfare", Amount 1250)],
                             billSpecificFunding = empty,
                             caps = empty
                             },
                          District {
                             districtName = DistrictName "Attica",
                             availableFunds = Amount 5000,
-                            categoryDefaultFunding = fromList [(Defense, Amount 1250), (Science, Amount 1250), (Welfare, Amount 2500)],
+                            categoryDefaultFunding = fromList [(Category "Defense", Amount 1250), (Category "Science", Amount 1250), (Category "Welfare", Amount 2500)],
                             billSpecificFunding = empty,
                             caps = empty
                             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
@@ -896,26 +896,26 @@ taxShortFall = do
     it "contributes no funds when no funds are available" $
       contribute [Bill {
       Model.billName = BillName "A bill",
-      category = Defense,
+      category = Category "Defense",
       Model.amount = Amount 200000
       }] [District {
             districtName = DistrictName "Tulsa",
             availableFunds = Amount 0,
-            categoryDefaultFunding = fromList [(Defense, Amount 10)],
+            categoryDefaultFunding = fromList [(Category "Defense", Amount 10)],
             billSpecificFunding = empty,
             caps = empty
             },
           District {
             districtName = DistrictName "Idaho",
             availableFunds = Amount 0,
-            categoryDefaultFunding = fromList [(Defense, Amount 5)],
+            categoryDefaultFunding = fromList [(Category "Defense", Amount 5)],
             billSpecificFunding = empty,
             caps = empty
             },
           District {
             districtName = DistrictName "Attica",
             availableFunds = Amount 0,
-            categoryDefaultFunding = fromList [(Defense, Amount 5)],
+            categoryDefaultFunding = fromList [(Category "Defense", Amount 5)],
             billSpecificFunding = empty,
             caps = empty
             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
@@ -935,26 +935,26 @@ taxShortFall = do
     it "contributes allocation proportion when fewer funds are available" $
       contribute [Bill {
       Model.billName = BillName "A bill",
-      category = Defense,
+      category = Category "Defense",
       Model.amount = Amount 200000
       }] [District {
             districtName = DistrictName "Tulsa",
             availableFunds = Amount 100,
-            categoryDefaultFunding = fromList [(Defense, Amount 200000)],
+            categoryDefaultFunding = fromList [(Category "Defense", Amount 200000)],
             billSpecificFunding = empty,
             caps = empty
             },
           District {
             districtName = DistrictName "Idaho",
             availableFunds = Amount 50,
-            categoryDefaultFunding = fromList [(Defense, Amount 200000)],
+            categoryDefaultFunding = fromList [(Category "Defense", Amount 200000)],
             billSpecificFunding = empty,
             caps = empty
             },
           District {
             districtName = DistrictName "Attica",
             availableFunds = Amount 50,
-            categoryDefaultFunding = fromList [(Defense, Amount 200000)],
+            categoryDefaultFunding = fromList [(Category "Defense", Amount 200000)],
             billSpecificFunding = empty,
             caps = empty
             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
@@ -978,26 +978,26 @@ taxExcess = do
     it "contributes contribution proportion when one district can fund the bill alone" $
       contribute [Bill {
       Model.billName = BillName "A bill",
-      category = Defense,
+      category = Category "Defense",
       Model.amount = Amount 200000
       }] [District {
             districtName = DistrictName "Tulsa",
             availableFunds = Amount 200000,
-            categoryDefaultFunding = fromList [(Defense, Amount 200000)],
+            categoryDefaultFunding = fromList [(Category "Defense", Amount 200000)],
             billSpecificFunding = empty,
             caps = empty
             },
           District {
             districtName = DistrictName "Idaho",
             availableFunds = Amount 50,
-            categoryDefaultFunding = fromList [(Defense, Amount 200000)],
+            categoryDefaultFunding = fromList [(Category "Defense", Amount 200000)],
             billSpecificFunding = empty,
             caps = empty
             },
           District {
             districtName = DistrictName "Attica",
             availableFunds = Amount 50,
-            categoryDefaultFunding = fromList [(Defense, Amount 200000)],
+            categoryDefaultFunding = fromList [(Category "Defense", Amount 200000)],
             billSpecificFunding = empty,
             caps = empty
             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
@@ -1017,26 +1017,26 @@ taxExcess = do
     it "contributes contribution proportion when one district falls short " $
       contribute [Bill {
       Model.billName = BillName "A bill",
-      category = Defense,
+      category = Category "Defense",
       Model.amount = Amount 200000
       }] [District {
             districtName = DistrictName "Tulsa",
             availableFunds = Amount 200000,
-            categoryDefaultFunding = fromList [(Defense, Amount 200000)],
+            categoryDefaultFunding = fromList [(Category "Defense", Amount 200000)],
             billSpecificFunding = empty,
             caps = empty
             },
           District {
             districtName = DistrictName "Idaho",
             availableFunds = Amount 50,
-            categoryDefaultFunding = fromList [(Defense, Amount 200000)],
+            categoryDefaultFunding = fromList [(Category "Defense", Amount 200000)],
             billSpecificFunding = empty,
             caps = empty
             },
           District {
             districtName = DistrictName "Attica",
             availableFunds = Amount 200000,
-            categoryDefaultFunding = fromList [(Defense, Amount 200000)],
+            categoryDefaultFunding = fromList [(Category "Defense", Amount 200000)],
             billSpecificFunding = empty,
             caps = empty
             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",
@@ -1056,26 +1056,26 @@ taxExcess = do
     it "contributes contribution proportion when available/allocated >> required" $
       contribute [Bill {
       Model.billName = BillName "A bill",
-      category = Defense,
+      category = Category "Defense",
       Model.amount = Amount 2000
       }] [District {
             districtName = DistrictName "Tulsa",
             availableFunds = Amount 200000,
-            categoryDefaultFunding = fromList [(Defense, Amount 200000)],
+            categoryDefaultFunding = fromList [(Category "Defense", Amount 200000)],
             billSpecificFunding = empty,
             caps = empty
             },
           District {
             districtName = DistrictName "Idaho",
             availableFunds = Amount 3000,
-            categoryDefaultFunding = fromList [(Defense, Amount 200000)],
+            categoryDefaultFunding = fromList [(Category "Defense", Amount 200000)],
             billSpecificFunding = empty,
             caps = empty
             },
           District {
             districtName = DistrictName "Attica",
             availableFunds = Amount 1000,
-            categoryDefaultFunding = fromList [(Defense, Amount 200000)],
+            categoryDefaultFunding = fromList [(Category "Defense", Amount 200000)],
             billSpecificFunding = empty,
             caps = empty
             }] `shouldBe` [Contribution { Contribute.billName = BillName "A bill",

@@ -19,12 +19,12 @@ atLeastOneBill = do
     it "returns Right [Bill] when given an Input with at least one Bill" $
       M.billsFromInput Input { bills = [Bill {
                                         billName = BillName "An Act to Construct the Great Wall of Malodivo",
-                                        category = Defense,
+                                        category = Category "Defense",
                                         amount = Amount 200000
                                         }],
                               districts = [] } `shouldBe` Right [M.Bill {
                                         M.billName = M.BillName "An Act to Construct the Great Wall of Malodivo",
-                                        M.category = M.Defense,
+                                        M.category = M.Category "Defense",
                                         M.amount = Amount 200000
                                         }]
     it "returns Left String when given an Input with no Bills" $

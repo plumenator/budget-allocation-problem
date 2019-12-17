@@ -35,8 +35,7 @@ instance FromJSON Bill where
 newtype BillName = BillName Text
   deriving (Show, Generic, ToJSON, ToJSONKey, FromJSON, FromJSONKey, Eq, Ord)
 
--- TODO: Support dynamic (input specified) list of categories
-data Category = Defense | Welfare | Science
+data Category = Category Text
   deriving (Show, Generic, ToJSON, ToJSONKey, FromJSON, FromJSONKey, Eq, Ord)
 
 -- TODO: Customize FromJSON to reject negative numbers
