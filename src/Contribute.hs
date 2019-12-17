@@ -38,10 +38,12 @@ totalAllocated :: [Bill] -> District -> Amount
 totalAllocated allBills district = Prelude.foldr add (Amount 0) [billCappedAllocation (totalCategoryAllocated allBills) b district | b <- allBills]
 
 billCappedAllocation :: (Category -> District -> Amount) -> Bill -> District -> Amount
-billCappedAllocation totalCategoryAllocated bill district = maybe uncapped (min uncapped) capped where
-  uncapped = billAllocation bill district
-  -- proportionality of category cap
-  capped = billCap (category bill) (ratio uncapped (totalCategoryAllocated (category bill) district)) district
+billCappedAllocation totalCategoryAllocated bill district = maybe allocated (min allocated) capped
+  where
+    allocated = billAllocation bill district
+    -- proportionality of category cap
+    capped = billCap (category bill) billProportion district
+    billProportion = ratio allocated (totalCategoryAllocated (category bill) district)
 
 totalCategoryAllocated :: [Bill] -> Category -> District -> Amount
 totalCategoryAllocated bills category district = Prelude.foldr add (Amount 0) [billAllocation b district | b <- bills, (Model.category b) == category]
