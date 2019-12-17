@@ -1,0 +1,2848 @@
+{
+  "bills": [
+    {
+      "name": "Defense 30",
+      "category": "Defense 1",
+      "amount": 300
+    },
+    {
+      "name": "Defense 29",
+      "category": "Defense 1",
+      "amount": 290
+    },
+    {
+      "name": "Defense 28",
+      "category": "Defense 1",
+      "amount": 280
+    },
+    {
+      "name": "Defense 27",
+      "category": "Defense 2",
+      "amount": 270
+    },
+    {
+      "name": "Defense 26",
+      "category": "Defense 2",
+      "amount": 260
+    },
+    {
+      "name": "Defense 25",
+      "category": "Defense 2",
+      "amount": 250
+    },
+    {
+      "name": "Defense 24",
+      "category": "Defense 3",
+      "amount": 240
+    },
+    {
+      "name": "Defense 23",
+      "category": "Defense 3",
+      "amount": 230
+    },
+    {
+      "name": "Defense 22",
+      "category": "Defense 3",
+      "amount": 220
+    },
+    {
+      "name": "Defense 21",
+      "category": "Defense 4",
+      "amount": 210
+    },
+    {
+      "name": "Defense 20",
+      "category": "Defense 4",
+      "amount": 200
+    },
+    {
+      "name": "Defense 19",
+      "category": "Defense 4",
+      "amount": 190
+    },
+    {
+      "name": "Defense 18",
+      "category": "Defense 5",
+      "amount": 180
+    },
+    {
+      "name": "Defense 17",
+      "category": "Defense 5",
+      "amount": 170
+    },
+    {
+      "name": "Defense 16",
+      "category": "Defense 5",
+      "amount": 160
+    },
+    {
+      "name": "Defense 15",
+      "category": "Defense 6",
+      "amount": 150
+    },
+    {
+      "name": "Defense 14",
+      "category": "Defense 6",
+      "amount": 140
+    },
+    {
+      "name": "Defense 13",
+      "category": "Defense 6",
+      "amount": 130
+    },
+    {
+      "name": "Defense 12",
+      "category": "Defense 7",
+      "amount": 120
+    },
+    {
+      "name": "Defense 11",
+      "category": "Defense 7",
+      "amount": 110
+    },
+    {
+      "name": "Defense 10",
+      "category": "Defense 7",
+      "amount": 100
+    },
+    {
+      "name": "Defense 9",
+      "category": "Defense 8",
+      "amount": 90
+    },
+    {
+      "name": "Defense 8",
+      "category": "Defense 8",
+      "amount": 80
+    },
+    {
+      "name": "Defense 7",
+      "category": "Defense 8",
+      "amount": 70
+    },
+    {
+      "name": "Defense 6",
+      "category": "Defense 9",
+      "amount": 60
+    },
+    {
+      "name": "Defense 5",
+      "category": "Defense 9",
+      "amount": 50
+    },
+    {
+      "name": "Defense 4",
+      "category": "Defense 9",
+      "amount": 40
+    },
+    {
+      "name": "Defense 3",
+      "category": "Defense 10",
+      "amount": 30
+    },
+    {
+      "name": "Defense 2",
+      "category": "Defense 10",
+      "amount": 20
+    },
+    {
+      "name": "Defense 1",
+      "category": "Defense 10",
+      "amount": 10
+    },
+    {
+      "name": "Welfare 30",
+      "category": "Welfare 1",
+      "amount": 3000
+    },
+    {
+      "name": "Welfare 29",
+      "category": "Welfare 1",
+      "amount": 2900
+    },
+    {
+      "name": "Welfare 28",
+      "category": "Welfare 1",
+      "amount": 2800
+    },
+    {
+      "name": "Welfare 27",
+      "category": "Welfare 1",
+      "amount": 2700
+    },
+    {
+      "name": "Welfare 26",
+      "category": "Welfare 1",
+      "amount": 2600
+    },
+    {
+      "name": "Welfare 25",
+      "category": "Welfare 2",
+      "amount": 2500
+    },
+    {
+      "name": "Welfare 24",
+      "category": "Welfare 2",
+      "amount": 2400
+    },
+    {
+      "name": "Welfare 23",
+      "category": "Welfare 2",
+      "amount": 2300
+    },
+    {
+      "name": "Welfare 22",
+      "category": "Welfare 2",
+      "amount": 2200
+    },
+    {
+      "name": "Welfare 21",
+      "category": "Welfare 2",
+      "amount": 2100
+    },
+    {
+      "name": "Welfare 20",
+      "category": "Welfare 3",
+      "amount": 2000
+    },
+    {
+      "name": "Welfare 19",
+      "category": "Welfare 3",
+      "amount": 1900
+    },
+    {
+      "name": "Welfare 18",
+      "category": "Welfare 3",
+      "amount": 1800
+    },
+    {
+      "name": "Welfare 17",
+      "category": "Welfare 3",
+      "amount": 1700
+    },
+    {
+      "name": "Welfare 16",
+      "category": "Welfare 3",
+      "amount": 1600
+    },
+    {
+      "name": "Welfare 15",
+      "category": "Welfare 4",
+      "amount": 1500
+    },
+    {
+      "name": "Welfare 14",
+      "category": "Welfare 4",
+      "amount": 1400
+    },
+    {
+      "name": "Welfare 13",
+      "category": "Welfare 4",
+      "amount": 1300
+    },
+    {
+      "name": "Welfare 12",
+      "category": "Welfare 4",
+      "amount": 1200
+    },
+    {
+      "name": "Welfare 11",
+      "category": "Welfare 4",
+      "amount": 1100
+    },
+    {
+      "name": "Welfare 10",
+      "category": "Welfare 5",
+      "amount": 1000
+    },
+    {
+      "name": "Welfare 9",
+      "category": "Welfare 5",
+      "amount": 900
+    },
+    {
+      "name": "Welfare 8",
+      "category": "Welfare 5",
+      "amount": 800
+    },
+    {
+      "name": "Welfare 7",
+      "category": "Welfare 5",
+      "amount": 700
+    },
+    {
+      "name": "Welfare 6",
+      "category": "Welfare 5",
+      "amount": 600
+    },
+    {
+      "name": "Welfare 5",
+      "category": "Welfare 6",
+      "amount": 500
+    },
+    {
+      "name": "Welfare 4",
+      "category": "Welfare 6",
+      "amount": 400
+    },
+    {
+      "name": "Welfare 3",
+      "category": "Welfare 6",
+      "amount": 300
+    },
+    {
+      "name": "Welfare 2",
+      "category": "Welfare 6",
+      "amount": 200
+    },
+    {
+      "name": "Welfare 1",
+      "category": "Welfare 6",
+      "amount": 100
+    },
+    {
+      "name": "Science 30",
+      "category": "Science 1",
+      "amount": 30000
+    },
+    {
+      "name": "Science 29",
+      "category": "Science 1",
+      "amount": 29000
+    },
+    {
+      "name": "Science 28",
+      "category": "Science 1",
+      "amount": 28000
+    },
+    {
+      "name": "Science 27",
+      "category": "Science 1",
+      "amount": 27000
+    },
+    {
+      "name": "Science 26",
+      "category": "Science 1",
+      "amount": 26000
+    },
+    {
+      "name": "Science 25",
+      "category": "Science 1",
+      "amount": 25000
+    },
+    {
+      "name": "Science 24",
+      "category": "Science 1",
+      "amount": 24000
+    },
+    {
+      "name": "Science 23",
+      "category": "Science 1",
+      "amount": 23000
+    },
+    {
+      "name": "Science 22",
+      "category": "Science 1",
+      "amount": 22000
+    },
+    {
+      "name": "Science 21",
+      "category": "Science 1",
+      "amount": 21000
+    },
+    {
+      "name": "Science 20",
+      "category": "Science 2",
+      "amount": 20000
+    },
+    {
+      "name": "Science 19",
+      "category": "Science 2",
+      "amount": 19000
+    },
+    {
+      "name": "Science 18",
+      "category": "Science 2",
+      "amount": 18000
+    },
+    {
+      "name": "Science 17",
+      "category": "Science 2",
+      "amount": 17000
+    },
+    {
+      "name": "Science 16",
+      "category": "Science 2",
+      "amount": 16000
+    },
+    {
+      "name": "Science 15",
+      "category": "Science 2",
+      "amount": 15000
+    },
+    {
+      "name": "Science 14",
+      "category": "Science 2",
+      "amount": 14000
+    },
+    {
+      "name": "Science 13",
+      "category": "Science 3",
+      "amount": 13000
+    },
+    {
+      "name": "Science 12",
+      "category": "Science 3",
+      "amount": 12000
+    },
+    {
+      "name": "Science 11",
+      "category": "Science 3",
+      "amount": 11000
+    },
+    {
+      "name": "Science 10",
+      "category": "Science 3",
+      "amount": 10000
+    },
+    {
+      "name": "Science 9",
+      "category": "Science 3",
+      "amount": 9000
+    },
+    {
+      "name": "Science 8",
+      "category": "Science 3",
+      "amount": 8000
+    },
+    {
+      "name": "Science 7",
+      "category": "Science 3",
+      "amount": 7000
+    },
+    {
+      "name": "Science 6",
+      "category": "Science 3",
+      "amount": 6000
+    },
+    {
+      "name": "Science 5",
+      "category": "Science 4",
+      "amount": 5000
+    },
+    {
+      "name": "Science 4",
+      "category": "Science 4",
+      "amount": 4000
+    },
+    {
+      "name": "Science 3",
+      "category": "Science 4",
+      "amount": 3000
+    },
+    {
+      "name": "Science 2",
+      "category": "Science 4",
+      "amount": 2000
+    },
+    {
+      "name": "Science 1",
+      "category": "Science 4",
+      "amount": 1000
+    }
+  ],
+  "districts": [
+    {
+      "name": "Palolene 30",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 1",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 1",
+          "amount": 3000
+        },
+        {
+          "category": "Science 1",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 30",
+          "amount": 3000
+        },
+        {
+          "bill": "Science 30",
+          "amount": 3000
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 1",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 1",
+          "amount": 3199
+        },
+        {
+          "category": "Science 1",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Palolene 29",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 1",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 1",
+          "amount": 3000
+        },
+        {
+          "category": "Science 1",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 29",
+          "amount": 2900
+        },
+        {
+          "bill": "Science 29",
+          "amount": 2900
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 1",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 1",
+          "amount": 3199
+        },
+        {
+          "category": "Science 1",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Palolene 28",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 1",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 1",
+          "amount": 3000
+        },
+        {
+          "category": "Science 1",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 28",
+          "amount": 2800
+        },
+        {
+          "bill": "Science 28",
+          "amount": 2800
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 1",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 1",
+          "amount": 3199
+        },
+        {
+          "category": "Science 1",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Palolene 27",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 1",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 1",
+          "amount": 3000
+        },
+        {
+          "category": "Science 1",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 27",
+          "amount": 2700
+        },
+        {
+          "bill": "Science 27",
+          "amount": 2700
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 1",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 1",
+          "amount": 3199
+        },
+        {
+          "category": "Science 1",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Palolene 26",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 1",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 1",
+          "amount": 3000
+        },
+        {
+          "category": "Science 1",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 26",
+          "amount": 2600
+        },
+        {
+          "bill": "Science 26",
+          "amount": 2600
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 1",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 1",
+          "amount": 3199
+        },
+        {
+          "category": "Science 1",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Palolene 25",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 1",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 1",
+          "amount": 3000
+        },
+        {
+          "category": "Science 1",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 25",
+          "amount": 2500
+        },
+        {
+          "bill": "Science 25",
+          "amount": 2500
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 1",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 1",
+          "amount": 3199
+        },
+        {
+          "category": "Science 1",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Palolene 24",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 2",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 2",
+          "amount": 3000
+        },
+        {
+          "category": "Science 1",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 24",
+          "amount": 2400
+        },
+        {
+          "bill": "Science 24",
+          "amount": 2400
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 2",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 2",
+          "amount": 3199
+        },
+        {
+          "category": "Science 1",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Palolene 23",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 2",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 2",
+          "amount": 3000
+        },
+        {
+          "category": "Science 1",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 23",
+          "amount": 2300
+        },
+        {
+          "bill": "Science 23",
+          "amount": 2300
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 2",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 2",
+          "amount": 3199
+        },
+        {
+          "category": "Science 1",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Palolene 22",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 2",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 2",
+          "amount": 3000
+        },
+        {
+          "category": "Science 1",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 22",
+          "amount": 2200
+        },
+        {
+          "bill": "Science 22",
+          "amount": 2200
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 2",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 2",
+          "amount": 3199
+        },
+        {
+          "category": "Science 1",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Palolene 21",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 2",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 2",
+          "amount": 3000
+        },
+        {
+          "category": "Science 1",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 21",
+          "amount": 2100
+        },
+        {
+          "bill": "Science 21",
+          "amount": 2100
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 2",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 2",
+          "amount": 3199
+        },
+        {
+          "category": "Science 1",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Palolene 20",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 2",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 2",
+          "amount": 3000
+        },
+        {
+          "category": "Science 1",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 20",
+          "amount": 2000
+        },
+        {
+          "bill": "Science 20",
+          "amount": 2000
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 2",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 2",
+          "amount": 3199
+        },
+        {
+          "category": "Science 1",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Palolene 19",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 2",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 2",
+          "amount": 3000
+        },
+        {
+          "category": "Science 1",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 19",
+          "amount": 1900
+        },
+        {
+          "bill": "Science 19",
+          "amount": 1900
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 2",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 2",
+          "amount": 3199
+        },
+        {
+          "category": "Science 1",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Palolene 18",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 3",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 3",
+          "amount": 3000
+        },
+        {
+          "category": "Science 3",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 18",
+          "amount": 1800
+        },
+        {
+          "bill": "Science 18",
+          "amount": 1800
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 3",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 3",
+          "amount": 3199
+        },
+        {
+          "category": "Science 3",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Palolene 17",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 3",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 3",
+          "amount": 3000
+        },
+        {
+          "category": "Science 3",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 17",
+          "amount": 1700
+        },
+        {
+          "bill": "Science 17",
+          "amount": 1700
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 3",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 3",
+          "amount": 3199
+        },
+        {
+          "category": "Science 3",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Palolene 16",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 3",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 3",
+          "amount": 3000
+        },
+        {
+          "category": "Science 3",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 16",
+          "amount": 1600
+        },
+        {
+          "bill": "Science 16",
+          "amount": 1600
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 3",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 3",
+          "amount": 3199
+        },
+        {
+          "category": "Science 3",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Palolene 15",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 3",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 3",
+          "amount": 3000
+        },
+        {
+          "category": "Science 3",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 15",
+          "amount": 1500
+        },
+        {
+          "bill": "Science 15",
+          "amount": 1500
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 3",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 3",
+          "amount": 3199
+        },
+        {
+          "category": "Science 3",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Palolene 14",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 3",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 3",
+          "amount": 3000
+        },
+        {
+          "category": "Science 3",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 14",
+          "amount": 1400
+        },
+        {
+          "bill": "Science 14",
+          "amount": 1400
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 3",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 3",
+          "amount": 3199
+        },
+        {
+          "category": "Science 3",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Palolene 13",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 4",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 4",
+          "amount": 3000
+        },
+        {
+          "category": "Science 4",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 13",
+          "amount": 1300
+        },
+        {
+          "bill": "Science 13",
+          "amount": 1300
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 4",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 4",
+          "amount": 3199
+        },
+        {
+          "category": "Science 4",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Palolene 12",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 4",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 4",
+          "amount": 3000
+        },
+        {
+          "category": "Science 4",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 12",
+          "amount": 1200
+        },
+        {
+          "bill": "Science 12",
+          "amount": 1200
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 4",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 4",
+          "amount": 3199
+        },
+        {
+          "category": "Science 4",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Palolene 11",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 4",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 4",
+          "amount": 3000
+        },
+        {
+          "category": "Science 4",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 11",
+          "amount": 1100
+        },
+        {
+          "bill": "Science 11",
+          "amount": 1100
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 4",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 4",
+          "amount": 3199
+        },
+        {
+          "category": "Science 4",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Palolene 10",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 4",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 4",
+          "amount": 3000
+        },
+        {
+          "category": "Science 4",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 10",
+          "amount": 1000
+        },
+        {
+          "bill": "Science 10",
+          "amount": 1000
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 4",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 4",
+          "amount": 3199
+        },
+        {
+          "category": "Science 4",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Palolene 9",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 4",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 4",
+          "amount": 3000
+        },
+        {
+          "category": "Science 4",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 9",
+          "amount": 900
+        },
+        {
+          "bill": "Science 9",
+          "amount": 900
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 4",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 4",
+          "amount": 3199
+        },
+        {
+          "category": "Science 4",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Palolene 8",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 5",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 5",
+          "amount": 3000
+        },
+        {
+          "category": "Science 5",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 8",
+          "amount": 800
+        },
+        {
+          "bill": "Science 8",
+          "amount": 800
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 5",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 5",
+          "amount": 3199
+        },
+        {
+          "category": "Science 5",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Palolene 7",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 5",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 5",
+          "amount": 3000
+        },
+        {
+          "category": "Science 5",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 7",
+          "amount": 700
+        },
+        {
+          "bill": "Science 7",
+          "amount": 700
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 5",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 5",
+          "amount": 3199
+        },
+        {
+          "category": "Science 5",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Palolene 6",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 5",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 5",
+          "amount": 3000
+        },
+        {
+          "category": "Science 5",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 6",
+          "amount": 600
+        },
+        {
+          "bill": "Science 6",
+          "amount": 600
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 5",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 5",
+          "amount": 3199
+        },
+        {
+          "category": "Science 5",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Palolene 5",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 5",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 5",
+          "amount": 3000
+        },
+        {
+          "category": "Science 5",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 5",
+          "amount": 500
+        },
+        {
+          "bill": "Science 5",
+          "amount": 500
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 5",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 5",
+          "amount": 3199
+        },
+        {
+          "category": "Science 5",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Palolene 4",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 5",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 5",
+          "amount": 3000
+        },
+        {
+          "category": "Science 5",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 4",
+          "amount": 400
+        },
+        {
+          "bill": "Science 4",
+          "amount": 400
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 5",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 5",
+          "amount": 3199
+        },
+        {
+          "category": "Science 5",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Palolene 3",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 5",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 5",
+          "amount": 3000
+        },
+        {
+          "category": "Science 5",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 3",
+          "amount": 300
+        },
+        {
+          "bill": "Science 3",
+          "amount": 300
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 5",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 5",
+          "amount": 3199
+        },
+        {
+          "category": "Science 5",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Palolene 2",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 5",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 5",
+          "amount": 3000
+        },
+        {
+          "category": "Science 5",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 2",
+          "amount": 200
+        },
+        {
+          "bill": "Science 2",
+          "amount": 200
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 5",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 5",
+          "amount": 3199
+        },
+        {
+          "category": "Science 5",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Palolene 1",
+      "availableFunds": 200000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 5",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 5",
+          "amount": 3000
+        },
+        {
+          "category": "Science 5",
+          "amount": 5000
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Defense 1",
+          "amount": 100
+        },
+        {
+          "bill": "Science 1",
+          "amount": 100
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 5",
+          "amount": 3000
+        },
+        {
+          "category": "Welfare 5",
+          "amount": 3199
+        },
+        {
+          "category": "Science 5",
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 30",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 5",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 5",
+          "amount": 5000
+        },
+        {
+          "category": "Science 5",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 5",
+          "amount": 300000
+        },
+        {
+          "category": "Welfare 5",
+          "amount": 300000
+        },
+        {
+          "category": "Science 5",
+          "amount": 300000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 29",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 5",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 5",
+          "amount": 5000
+        },
+        {
+          "category": "Science 5",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 5",
+          "amount": 290000
+        },
+        {
+          "category": "Welfare 5",
+          "amount": 290000
+        },
+        {
+          "category": "Science 5",
+          "amount": 290000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 28",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 6",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 5000
+        },
+        {
+          "category": "Science 11",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 6",
+          "amount": 280000
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 280000
+        },
+        {
+          "category": "Science 11",
+          "amount": 280000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 27",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 6",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 5000
+        },
+        {
+          "category": "Science 11",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 6",
+          "amount": 270000
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 270000
+        },
+        {
+          "category": "Science 11",
+          "amount": 270000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 26",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 6",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 5000
+        },
+        {
+          "category": "Science 11",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 6",
+          "amount": 260000
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 260000
+        },
+        {
+          "category": "Science 11",
+          "amount": 260000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 25",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 6",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 5000
+        },
+        {
+          "category": "Science 11",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 6",
+          "amount": 250000
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 250000
+        },
+        {
+          "category": "Science 11",
+          "amount": 250000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 24",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 6",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 5000
+        },
+        {
+          "category": "Science 11",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 6",
+          "amount": 240000
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 240000
+        },
+        {
+          "category": "Science 11",
+          "amount": 240000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 23",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 6",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 5000
+        },
+        {
+          "category": "Science 11",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 6",
+          "amount": 230000
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 230000
+        },
+        {
+          "category": "Science 11",
+          "amount": 230000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 22",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 6",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 5000
+        },
+        {
+          "category": "Science 11",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 6",
+          "amount": 220000
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 220000
+        },
+        {
+          "category": "Science 11",
+          "amount": 220000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 21",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 6",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 5000
+        },
+        {
+          "category": "Science 11",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 6",
+          "amount": 210000
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 210000
+        },
+        {
+          "category": "Science 11",
+          "amount": 210000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 10",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 6",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 5000
+        },
+        {
+          "category": "Science 11",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 6",
+          "amount": 100000
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 100000
+        },
+        {
+          "category": "Science 11",
+          "amount": 100000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 19",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 6",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 5000
+        },
+        {
+          "category": "Science 11",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 6",
+          "amount": 190000
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 190000
+        },
+        {
+          "category": "Science 11",
+          "amount": 190000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 18",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 6",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 5000
+        },
+        {
+          "category": "Science 11",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 6",
+          "amount": 180000
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 180000
+        },
+        {
+          "category": "Science 11",
+          "amount": 180000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 17",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 6",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 5000
+        },
+        {
+          "category": "Science 11",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 6",
+          "amount": 170000
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 170000
+        },
+        {
+          "category": "Science 11",
+          "amount": 170000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 16",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 6",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 5000
+        },
+        {
+          "category": "Science 11",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 6",
+          "amount": 160000
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 160000
+        },
+        {
+          "category": "Science 11",
+          "amount": 160000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 15",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 6",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 5000
+        },
+        {
+          "category": "Science 11",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 6",
+          "amount": 150000
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 150000
+        },
+        {
+          "category": "Science 11",
+          "amount": 150000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 14",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 6",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 5000
+        },
+        {
+          "category": "Science 11",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 6",
+          "amount": 140000
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 140000
+        },
+        {
+          "category": "Science 11",
+          "amount": 140000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 13",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 6",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 5000
+        },
+        {
+          "category": "Science 11",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 6",
+          "amount": 130000
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 130000
+        },
+        {
+          "category": "Science 11",
+          "amount": 130000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 12",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 6",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 5000
+        },
+        {
+          "category": "Science 11",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 6",
+          "amount": 120000
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 120000
+        },
+        {
+          "category": "Science 11",
+          "amount": 120000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 11",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 6",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 5000
+        },
+        {
+          "category": "Science 11",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 6",
+          "amount": 110000
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 110000
+        },
+        {
+          "category": "Science 11",
+          "amount": 110000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 10",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 6",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 5000
+        },
+        {
+          "category": "Science 11",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 6",
+          "amount": 100000
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 100000
+        },
+        {
+          "category": "Science 11",
+          "amount": 100000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 9",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 6",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 5000
+        },
+        {
+          "category": "Science 11",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 6",
+          "amount": 90000
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 90000
+        },
+        {
+          "category": "Science 11",
+          "amount": 90000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 8",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 6",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 5000
+        },
+        {
+          "category": "Science 11",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 6",
+          "amount": 80000
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 80000
+        },
+        {
+          "category": "Science 11",
+          "amount": 80000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 7",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 6",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 5000
+        },
+        {
+          "category": "Science 11",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 6",
+          "amount": 70000
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 70000
+        },
+        {
+          "category": "Science 11",
+          "amount": 70000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 6",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 6",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 5000
+        },
+        {
+          "category": "Science 11",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 6",
+          "amount": 60000
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 60000
+        },
+        {
+          "category": "Science 11",
+          "amount": 60000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 5",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 6",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 5000
+        },
+        {
+          "category": "Science 11",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 6",
+          "amount": 50000
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 50000
+        },
+        {
+          "category": "Science 11",
+          "amount": 50000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 4",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 6",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 5000
+        },
+        {
+          "category": "Science 11",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 6",
+          "amount": 40000
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 40000
+        },
+        {
+          "category": "Science 11",
+          "amount": 40000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 3",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 6",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 5000
+        },
+        {
+          "category": "Science 11",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 6",
+          "amount": 30000
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 30000
+        },
+        {
+          "category": "Science 11",
+          "amount": 30000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 2",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 6",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 5000
+        },
+        {
+          "category": "Science 11",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 6",
+          "amount": 20000
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 20000
+        },
+        {
+          "category": "Science 11",
+          "amount": 20000
+        }
+      ]
+    },
+    {
+      "name": "Southern Palolene 1",
+      "availableFunds": 150000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 6",
+          "amount": 500
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 5000
+        },
+        {
+          "category": "Science 11",
+          "amount": 2000
+        }
+      ],
+      "billSpecificFunding": [],
+      "caps": [
+        {
+          "category": "Defense 6",
+          "amount": 10000
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 10000
+        },
+        {
+          "category": "Science 11",
+          "amount": 10000
+        }
+      ]
+    },
+    {
+      "name": "Lakos",
+      "availableFunds": 40000000,
+      "categoryDefaultFunding": [
+        {
+          "category": "Defense 10",
+          "amount": 10000
+        },
+        {
+          "category": "Defense 9",
+          "amount": 10000
+        },
+        {
+          "category": "Defense 8",
+          "amount": 10000
+        },
+        {
+          "category": "Defense 7",
+          "amount": 10000
+        },
+        {
+          "category": "Defense 6",
+          "amount": 10000
+        },
+        {
+          "category": "Defense 5",
+          "amount": 10000
+        },
+        {
+          "category": "Defense 4",
+          "amount": 10000
+        },
+        {
+          "category": "Defense 3",
+          "amount": 10000
+        },
+        {
+          "category": "Defense 2",
+          "amount": 10000
+        },
+        {
+          "category": "Defense 1",
+          "amount": 10000
+        },
+        {
+          "category": "Welfare 7",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 6",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 5",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 4",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 3",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 2",
+          "amount": 1000
+        },
+        {
+          "category": "Welfare 1",
+          "amount": 1000
+        },
+        {
+          "category": "Science 11",
+          "amount": 500
+        },
+        {
+          "category": "Science 10",
+          "amount": 500
+        },
+        {
+          "category": "Science 9",
+          "amount": 500
+        },
+        {
+          "category": "Science 8",
+          "amount": 500
+        },
+        {
+          "category": "Science 7",
+          "amount": 500
+        },
+        {
+          "category": "Science 6",
+          "amount": 500
+        },
+        {
+          "category": "Science 5",
+          "amount": 500
+        },
+        {
+          "category": "Science 4",
+          "amount": 500
+        },
+        {
+          "category": "Science 3",
+          "amount": 500
+        },
+        {
+          "category": "Science 2",
+          "amount": 500
+        },
+        {
+          "category": "Science 1",
+          "amount": 500
+        }
+      ],
+      "billSpecificFunding": [
+        {
+          "bill": "Welfare 25",
+          "amount": 100000
+        },
+        {
+          "bill": "Science 30",
+          "amount": 0
+        }
+      ],
+      "caps": [
+        {
+          "category": "Defense 3",
+          "amount": 30000
+        },
+        {
+          "category": "Welfare 2",
+          "amount": 3000
+        },
+        {
+          "category": "Science 5",
+          "amount": 1000
+        }
+      ]
+    }
+  ]
+}
