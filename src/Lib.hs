@@ -1,16 +1,29 @@
 module Lib (
   processInputBytes,
   processInputBytesPretty,
+  processInputText,
+  processInputTextPretty,
   ) where
 
 import Data.Aeson
 import Data.Aeson.Encode.Pretty
+import Data.Bifunctor
 import Data.ByteString.Lazy
+import Data.Text.Lazy
+import Data.Text.Lazy.Encoding
 
 import Contribute
 import InputSchema (Input)
 import Model
 import OutputSchema
+
+processInputText :: Text -> Either String Text
+processInputText inputText = processInputBytes (encodeUtf8 inputText)
+                             >>= first show . decodeUtf8'
+
+processInputTextPretty :: Text -> Either String Text
+processInputTextPretty inputText = processInputBytesPretty (encodeUtf8 inputText)
+                                   >>= first show . decodeUtf8'
 
 processInputBytes :: ByteString -> Either String ByteString
 processInputBytes inputBytes = do

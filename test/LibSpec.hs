@@ -9,6 +9,7 @@ import Lib
 spec :: Spec
 spec = do
   testProcessInputBytes
+  testUnicodeInput
 
 testProcessInputBytes :: Spec
 testProcessInputBytes = do
@@ -161,3 +162,31 @@ inputJSON ="{\
 \}"
 
 outputJSON = "{\"balances\":[{\"amount\":188301,\"district\":\"Palolene\"},{\"amount\":137500,\"district\":\"Southern Palolene\"},{\"amount\":368000,\"district\":\"Lakos\"}],\"deficits\":[{\"amount\":168500,\"billName\":\"An Act to Construct the Great Wall of Malodivo\"},{\"amount\":31258,\"billName\":\"An Act to Construct Shelters for the Homeless\"},{\"amount\":4500,\"billName\":\"An Act to Fund the Development of Longer-Lasting Paper\"},{\"amount\":83543,\"billName\":\"An Act to Increase Retirement Benefits for Veterans\"}],\"contributions\":[{\"billName\":\"An Act to Construct the Great Wall of Malodivo\",\"funds\":[{\"amount\":1000,\"district\":\"Palolene\"},{\"amount\":500,\"district\":\"Southern Palolene\"},{\"amount\":30000,\"district\":\"Lakos\"}]},{\"billName\":\"An Act to Construct Shelters for the Homeless\",\"funds\":[{\"amount\":2742,\"district\":\"Palolene\"},{\"amount\":5000,\"district\":\"Southern Palolene\"},{\"amount\":1000,\"district\":\"Lakos\"}]},{\"billName\":\"An Act to Fund the Development of Longer-Lasting Paper\",\"funds\":[{\"amount\":7500,\"district\":\"Palolene\"},{\"amount\":2000,\"district\":\"Southern Palolene\"},{\"amount\":0,\"district\":\"Lakos\"}]},{\"billName\":\"An Act to Increase Retirement Benefits for Veterans\",\"funds\":[{\"amount\":457,\"district\":\"Palolene\"},{\"amount\":5000,\"district\":\"Southern Palolene\"},{\"amount\":1000,\"district\":\"Lakos\"}]}]}"
+
+unicodeJSON ="{\
+\  \"bills\": [\
+\    {\
+\      \"name\": \"壁を建てる\",\
+\      \"category\": \"Defense\",\
+\      \"amount\": 200000\
+\    }\
+\  ],\
+\  \"districts\": [\
+\    {\
+\      \"name\": \"パロエン\",\
+\      \"availableFunds\": 200000,\
+\      \"categoryDefaultFunding\": [\
+\      ],\
+\      \"billSpecificFunding\": [\
+\      ],\
+\      \"caps\": [\
+\      ]\
+\    }\
+\  ]\
+\}"
+
+testUnicodeInput :: Spec
+testUnicodeInput = do
+  describe "Process unicode input" $ do
+    it "returns output JSON when given unicode input" $
+      processInputText unicodeJSON `shouldBe` Right "{\"balances\":[{\"amount\":200000,\"district\":\"パロエン\"}],\"deficits\":[{\"amount\":200000,\"billName\":\"壁を建てる\"}],\"contributions\":[{\"billName\":\"壁を建てる\",\"funds\":[{\"amount\":0,\"district\":\"パロエン\"}]}]}"

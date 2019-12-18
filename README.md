@@ -116,7 +116,6 @@ $ stack test --fast
 
 ## Assumptions
 1. The absence of a default means that there's no allocation for that category
-1. ASCII encoded input
 
 ## Limitations
 1. Due to rounding, a bill might fall short of funds even when a single
