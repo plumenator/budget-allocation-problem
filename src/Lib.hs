@@ -1,8 +1,10 @@
 module Lib (
-  processInputBytes
+  processInputBytes,
+  processInputBytesPretty,
   ) where
 
 import Data.Aeson
+import Data.Aeson.Encode.Pretty
 import Data.ByteString.Lazy
 
 import Contribute
@@ -15,6 +17,12 @@ processInputBytes inputBytes = do
   input <- eitherDecode inputBytes
   output <- processInput input
   return $ encode output
+
+processInputBytesPretty :: ByteString -> Either String ByteString
+processInputBytesPretty inputBytes = do
+  input <- eitherDecode inputBytes
+  output <- processInput input
+  return $ encodePretty output
 
 processInput :: Input -> Either String Output
 processInput input = do

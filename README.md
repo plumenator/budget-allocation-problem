@@ -2,7 +2,7 @@
 
 ## Usage
 ```shell
-$ stack exec $(basename `pwd`)-exe < sample-input.json | jq
+$ stack exec $(basename `pwd`)-exe < sample-input.json
 {
   "balances": [
     {

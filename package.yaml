@@ -25,6 +25,7 @@ dependencies:
 - text
 - aeson
 - bytestring
+- aeson-pretty
 
 library:
   source-dirs: src
