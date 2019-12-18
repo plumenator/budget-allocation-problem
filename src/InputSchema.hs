@@ -3,6 +3,7 @@
 module InputSchema where
 
 import Data.Aeson
+import Data.Aeson.Types
 import Data.Text
 import GHC.Generics
 
@@ -38,9 +39,13 @@ newtype BillName = BillName Text
 data Category = Category Text
   deriving (Show, Generic, ToJSON, ToJSONKey, FromJSON, FromJSONKey, Eq, Ord)
 
--- TODO: Customize FromJSON to reject negative numbers
 newtype Amount = Amount Integer
-  deriving (Show, Generic, ToJSON, FromJSON, Eq, Ord)
+  deriving (Show, Generic, ToJSON, Eq, Ord)
+
+instance FromJSON Amount where
+  parseJSON number@(Number inner)
+    | inner < 0 = typeMismatch "Non negative" number
+    | otherwise = genericParseJSON defaultOptions number
 
 data District = District {
   districtName :: DistrictName,

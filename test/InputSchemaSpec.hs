@@ -40,6 +40,8 @@ decodeAmount = do
   describe "Decode Amount from JSON" $ do
     it "returns Just Amount when given a JSON number" $
       decode "1234" `shouldBe` Just (Amount 1234)
+    it "returns Nothing when given a negative number" $
+      (decode "-1234" :: Maybe Amount) `shouldBe` Nothing
 
 decodeBill :: Spec
 decodeBill = do
