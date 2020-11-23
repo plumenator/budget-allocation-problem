@@ -1,3 +1,4 @@
 .stack-work/
 budget-allocation-problem.cabal
 *~
+.DS_Store
